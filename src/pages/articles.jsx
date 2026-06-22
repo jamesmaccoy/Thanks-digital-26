@@ -11,10 +11,10 @@ export default function ArticlesPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Articles | Strategies &amp; insights from the team</title>
+        <title>Thanks Digital Articles | Strategies &amp; insights from the team</title>
         <meta
           name="description"
-          content="Design thinking, creative process, and business strategy written by the senior designers behind OPTIMA's client work."
+          content="Design thinking, creative process, and business strategy written by the senior designers behind Thanks Digital's client work."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

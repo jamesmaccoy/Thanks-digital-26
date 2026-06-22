@@ -79,9 +79,8 @@ export default function ManifestoSection() {
         </RevealText>
         <div className="space-y-10 text-textGray text-lg max-w-md">
           <p className="fade-up">
-            So I built Optima differently. No endless meetings, no office
-            politics, no pitches that promise everything. Just talented designers
-            doing what they do best.
+          A digital design partner for startups and brave businesses.
+          I create integrated brand, product and service experiences.
           </p>
           <p className="fade-up">
             We create design that actually solves problems. We&apos;re obsessive
@@ -89,7 +88,7 @@ export default function ManifestoSection() {
             care as much as they do.
           </p>
           <p className="text-white font-medium fade-up">
-            That&apos;s the Optima way. Simple, but not easy.
+            That&apos;s the Thanks Digital way. Simple, but not easy.
           </p>
           <div className="pt-10 border-t border-[#222] flex items-center gap-4 fade-up">
             <img

@@ -12,7 +12,7 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Pricing | Transparent plans built to scale</title>
+        <title>Thanks Digital Pricing | Transparent plans built to scale</title>
         <meta
           name="description"
           content="Simple, transparent pricing for world-class design. Monthly retainers, quarterly discounts, and enterprise plans. No hidden fees."

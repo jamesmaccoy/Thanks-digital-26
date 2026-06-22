@@ -39,7 +39,7 @@ export default function ArticleDetailPage({ article, relatedArticles }) {
   return (
     <>
       <Head>
-        <title>{article.title} | OPTIMA Articles</title>
+        <title>{article.title} | Thanks Digital Articles</title>
         <meta name="description" content={article.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

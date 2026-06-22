@@ -3,27 +3,27 @@
 export const contactMethods = [
   {
     label: "Email",
-    value: "contact@optima.agency",
-    href: "mailto:contact@optima.agency",
+    value: "hello@thanks.digital",
+    href: "mailto:hello@thanks.digital",
     description: "For project inquiries and general questions.",
   },
   {
     label: "Phone",
-    value: "+1 (212) 555-0147",
-    href: "tel:+12125550147",
+    value: "+27 079 612 5991",
+    href: "tel:+27 079 612 5991",
     description: "Mon — Fri, 9 AM – 6 PM EST.",
   },
   {
     label: "WhatsApp",
-    value: "+1 (212) 555-0147",
-    href: "https://wa.me/12125550147",
+    value: "+27 079 612 5991",
+    href: "https://wa.me/270796125991",
     description: "Quick questions and async updates.",
   },
 ];
 
 export const offices = [
   {
-    city: "New York",
+    city: "Johannesburg",
     country: "United States",
     address: "401 Broadway, Suite 2100\nNew York, NY 10013",
     timezone: "EST (UTC-5)",
@@ -31,7 +31,7 @@ export const offices = [
     primary: true,
   },
   {
-    city: "London",
+    city: "Cape Town",
     country: "United Kingdom",
     address: "71 Rivington Street\nLondon EC2A 3AY",
     timezone: "GMT (UTC+0)",
@@ -39,8 +39,8 @@ export const offices = [
     primary: false,
   },
   {
-    city: "Singapore",
-    country: "Singapore",
+    city: "Brighton",
+    country: "United Kingdom",
     address: "71 Robinson Road, #14-01\nSingapore 068895",
     timezone: "SGT (UTC+8)",
     hours: "Mon — Fri, 9 AM – 6 PM",
@@ -50,28 +50,20 @@ export const offices = [
 
 export const teamContacts = [
   {
-    name: "Sarah Park",
-    role: "Project Manager",
-    desc: "Your first point of contact. Sarah handles scoping, scheduling, and making sure everything runs smoothly.",
-    avatar: "/images/avatars/sarah-park-lg.webp",
+    name: "James Ma c",
+    role: "Designer & Software Engineer",
+    desc: "Your first point of contact. James handles design, development, and making sure everything runs smoothly.",
+    avatar: "/images/avatars/james-mac.jpg",
     available: true,
     slots: "2 slots open May 10",
   },
   {
-    name: "Alex West",
-    role: "Creative Director",
-    desc: "For strategic conversations about brand, creative direction, and long-term design partnerships.",
-    avatar: "/images/avatars/alex-west.webp",
+    name: "James Mac",
+    role: "Designer & Software Engineer",
+    desc: "Your first point of contact. James handles design, development, and making sure everything runs smoothly.",
+    avatar: "/images/avatars/james-mac.jpg",
     available: true,
-    slots: "By appointment",
-  },
-  {
-    name: "Jordan Lee",
-    role: "Head of Partnerships",
-    desc: "Enterprise enquiries, agency partnerships, and custom engagement models.",
-    avatar: "/images/avatars/jordan-lee.webp",
-    available: true,
-    slots: "Open availability",
+    slots: "2 slots open May 10",
   },
 ];
 

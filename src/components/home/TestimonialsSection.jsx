@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
     {
       quote: "We knew our tech was solid, but the brand didn't reflect that. After the redesign, everything just clicked—sales calls got easier, and people finally 'got' what we do.",
       name: "Aisha Clark",
-      role: "CEO, Warpspeed",
+      role: "CEO, Powers",
       avatar: "/images/avatars/maya-chen.webp",
       stats: [
         { value: "500x", label: "Github stars gained post-rebrand" },
@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
     {
       quote: "We came in with a fuzzy idea and left with a brand that feels completely aligned with our mission. The team really understood our product and turned that into something emotionally resonant.",
       name: "Linh Tran",
-      role: "VP of Product, Ephemeral",
+      role: "VP of Product, ACBA",
       avatar: "/images/avatars/jordan-lee.webp",
       stats: [
         { value: "4.6x", label: "Conversation frequency" },

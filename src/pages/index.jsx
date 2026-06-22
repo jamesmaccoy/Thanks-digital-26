@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Optima Agency | A design studio, built different.</title>
+        <title>Thanks Digital | A digital design partner for startups and brave businesses</title>
         <meta
           name="description"
-          content="We've reimagined how great design happens. No pitches. No proposals. Just exceptional work from senior designers who become an extension of your team."
+          content="A digital design partner for startups and brave businesses"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

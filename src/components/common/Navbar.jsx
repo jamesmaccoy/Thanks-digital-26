@@ -181,12 +181,12 @@ export default function Navbar() {
         {/* Bottom info */}
         <div className="absolute bottom-10 left-10 right-10 hidden md:flex justify-between items-end text-xs text-textGray">
           <div>
-            <div className="mb-1">New York (US)</div>
+            <div className="mb-1">Johannesburg (ZA)</div>
             <div ref={clockRef}>10:00 AM</div>
           </div>
           <div className="text-right">
-            <div className="mb-1">hello@optima.agency</div>
-            <div>&copy; 2026 OPTIMA</div>
+            <div className="mb-1">hello@thanks.digital</div>
+            <div>&copy; 2026 THANKS</div>
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@ export default function Navbar() {
           : "py-6 bg-transparent"
       }`}>
         <Link href="/" className="text-sm font-semibold tracking-wider hover:text-white transition-colors">
-          OPTIMA&reg;
+          THANKS
         </Link>
         <div className="hidden md:block text-sm text-textGray">
           New York (US) | <span>{newYorkTime}</span>

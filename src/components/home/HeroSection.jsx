@@ -70,25 +70,24 @@ export default function HeroSection() {
     >
       <div className="w-full relative z-0 flex flex-col items-center">
         <h1 className="text-[19vw] md:text-[18vw] leading-none lg:leading-[0.85] lg:tracking-[-0.05em] font-bold w-full text-center uppercase m-0 hero-text clip-text">
-          <span className="block translate-y-[100%]">OPTIMA</span>
+          <span className="block translate-y-[100%]">THANKS</span>
         </h1>
         <h1 className="text-[19vw] md:text-[18vw] leading-none lg:leading-[0.85] lg:tracking-[-0.05em] font-bold w-full text-center uppercase m-0 hero-text clip-text -mt-2 md:-mt-6">
-          <span className="block translate-y-[100%] text-textGray">AGENCY</span>
+          <span className="block translate-y-[100%] text-textGray">DIGITAL</span>
         </h1>
       </div>
 
 
 
       <div className="w-full lg:w-1/3 md:ml-auto mt-3 text-center lg:text-left text-sm md:text-xl text-textGray hero-desc opacity-0 px-2 md:px-0 mb-6 lg:mb-0">
-        We&apos;ve reimagined how great design happens. No pitches. No proposals.
-        Just exceptional work from senior designers who become an extension of
-        your team.
+      A digital design partner for startups and brave businesses.
+      I create integrated brand, product and service experiences.
       </div>
 
       {/* Floating Profile Card */}
       <div className="lg:absolute top-[80%] left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-[250px] md:w-64 bg-[#111] p-3 md:p-4 rounded-2xl border border-[#222] z-30 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.8)] profile-card opacity-0 scale-90 block">
         <img
-          src="/images/avatars/sarah-park-lg.webp"
+          src="/images/avatars/james-mac.jpg"
           alt=""
           className="w-full h-36 md:h-48 object-cover rounded-xl mb-3 md:mb-4 filter grayscale hover:grayscale-0 transition duration-500"
         />
@@ -96,11 +95,11 @@ export default function HeroSection() {
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>{" "}
           2 slots open May 10
         </div>
-        <h3 className="text-lg font-medium">Sarah Park</h3>
-        <p className="text-sm text-textGray mb-4">Project manager</p>
+        <h3 className="text-lg font-medium">James Mac</h3>
+        <p className="text-sm text-textGray mb-4">Designer & Software Engineer</p>
         <div className="flex justify-between items-center border-t border-[#333] pt-3 mb-3 text-sm">
           <span className="text-textGray">Plans start at</span>
-          <span>$7,500 / m</span>
+          <span>R7,500 / m</span>
         </div>
         <button className="w-full bg-white text-black py-2 rounded-lg font-medium text-sm hover:bg-gray-200 transition-colors">
           Book a 15-Min Call

@@ -12,10 +12,10 @@ export default function ProcessPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Process | How we deliver results, not surprises</title>
+        <title>Thanks Digital Process | How we deliver results, not surprises</title>
         <meta
           name="description"
-          content="Explore OPTIMA's proven process from discovery to delivery. Transparent, structured, and refined over 172+ projects."
+          content="Explore Thanks Digital's proven process from discovery to delivery. Transparent, structured, and refined over 172+ projects."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

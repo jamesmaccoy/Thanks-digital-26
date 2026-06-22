@@ -12,10 +12,10 @@ export default function WorkPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Work | Case studies & selected projects</title>
+        <title>Thanks Digital Work | Case studies & selected projects</title>
         <meta
           name="description"
-          content="Explore OPTIMA's portfolio brand strategy, product design, web design, and design systems for the most ambitious companies."
+          content="Explore Thanks Digital's portfolio brand strategy, product design, web design, and design systems for the most ambitious companies."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
