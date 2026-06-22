@@ -150,14 +150,14 @@ export const pricingTestimonials = [
   {
     quote: "The retainer model is a game-changer. We get senior-level design without the overhead of a full-time hire. The ROI has been incredible.",
     name: "Marcus Chen",
-    role: "VP of Product, Cubekit",
+    role: "VP of Product, Capitec",
     avatar: "/images/avatars/jordan-lee.webp",
     plan: "Scale",
   },
   {
     quote: "We started on Growth and upgraded to Scale within two months. The quality is consistent and the process is seamless. Best design investment we've made.",
     name: "Priya Sharma",
-    role: "CEO, Novalux",
+    role: "CEO, Santam",
     avatar: "/images/avatars/maya-chen.webp",
     plan: "Growth → Scale",
   },

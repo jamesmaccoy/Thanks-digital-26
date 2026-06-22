@@ -31,13 +31,13 @@ const detailByCategory = {
 };
 
 const resultByTitle = {
-  Quantum: ["340%", "User engagement increase", "52%", "Churn reduction"],
-  Cubekit: ["$12M", "Series A raised", "3.8x", "Demo requests"],
-  Ephemeral: ["2M+", "Daily active users", "4.6x", "Conversation frequency"],
-  Warpspeed: ["500x", "Github stars gained", "95%", "Developer approval"],
-  Magnolia: ["2.1x", "Qualified leads", "41%", "Lower bounce rate"],
+  SimplePlek: ["340%", "User engagement increase", "52%", "Churn reduction"],
+  Capitec: ["$12M", "Series A raised", "3.8x", "Demo requests"],
+  ACBA: ["2M+", "Daily active users", "4.6x", "Conversation frequency"],
+  Powers: ["500x", "Github stars gained", "95%", "Developer approval"],
+  Susu: ["2.1x", "Qualified leads", "41%", "Lower bounce rate"],
   "Global Bank": ["60%", "Faster handoff", "18", "Product teams aligned"],
-  Novalux: ["38%", "Retail lift", "7", "Markets launched"],
+  Santam: ["38%", "Retail lift", "7", "Markets launched"],
   "Helix Health": ["4.8", "App Store rating", "32%", "Task time reduction"],
   Arcadia: ["2.3x", "Conversion improvement", "29%", "Higher AOV"],
   Stellar: ["76%", "Campaign recall", "4", "Launch markets"],
