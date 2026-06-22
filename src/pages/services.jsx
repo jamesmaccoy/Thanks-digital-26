@@ -12,10 +12,10 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Services | Full-spectrum design under one roof</title>
+        <title>Thanks Digital Services | Full-spectrum design under one roof</title>
         <meta
           name="description"
-          content="Explore OPTIMA's services brand identity, digital design, product design, marketing, and development. Senior-only team, no outsourcing."
+          content="Explore Thanks Digital's services brand identity, digital design, product design, marketing, and development. Senior-only team, no outsourcing."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

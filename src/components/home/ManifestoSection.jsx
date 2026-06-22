@@ -92,13 +92,13 @@ export default function ManifestoSection() {
           </p>
           <div className="pt-10 border-t border-[#222] flex items-center gap-4 fade-up">
             <img
-              src="/images/avatars/alex-west.webp"
+              src="/images/avatars/james-mac.jpg"
               alt=""
               className="w-12 h-12 rounded-full object-cover grayscale"
             />
             <div>
-              <div className="font-medium text-white">Alex West</div>
-              <div className="text-sm">Founder &amp; Creative Director</div>
+              <div className="font-medium text-white">James Mac</div>
+              <div className="text-sm">Designer & Software Engineer</div>
             </div>
           </div>
         </div>

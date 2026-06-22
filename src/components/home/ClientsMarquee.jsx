@@ -27,15 +27,15 @@ export default function ClientsMarquee() {
         ref={trackRef}
         className="marquee-track flex gap-16 items-center text-xl md:text-3xl font-bold text-[#444] uppercase tracking-wider"
       >
-        <span>GlobalBank</span> <span>•</span>
-        <span>AlphaWave</span> <span>•</span>
-        <span>Biosynthetix</span> <span>•</span>
-        <span>Clandestine</span> <span>•</span>
-        <span>Codecraft</span> <span>•</span>
-        <span>Boltshift</span> <span>•</span>
-        <span>GlobalBank</span> <span>•</span>
-        <span>AlphaWave</span> <span>•</span>
-        <span>Biosynthetix</span> <span>•</span>
+        <span>Santam</span> <span>•</span>
+        <span>Sanlam</span> <span>•</span>
+        <span>Capitec</span> <span>•</span>
+        <span>Standard Bank</span> <span>•</span>
+        <span>Old Mutal</span> <span>•</span>
+        <span>Nokia</span> <span>•</span>
+        <span>Virgin</span> <span>•</span>
+        <span>Skype</span> <span>•</span>
+        <span>Sterkinikor</span> <span>•</span>
       </div>
     </section>
   );

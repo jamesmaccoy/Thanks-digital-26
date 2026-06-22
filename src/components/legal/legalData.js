@@ -7,12 +7,12 @@ export const termsSections = [
   {
     id: "acceptance",
     title: "1. Acceptance of Terms",
-    content: `By accessing and using OPTIMA's services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services. These terms apply to all visitors, users, and clients who access our website, engage our design services, or use any of our digital products.`,
+    content: `By accessing and using Thanks Digital's services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our services. These terms apply to all visitors, users, and clients who access our website, engage our design services, or use any of our digital products.`,
   },
   {
     id: "services",
     title: "2. Description of Services",
-    content: `OPTIMA provides professional design services including but not limited to brand identity design, digital design, product design, marketing and growth materials, and development services. Our services are delivered through various engagement models including project-based work, monthly retainers, and enterprise partnerships. Each service engagement is governed by a specific service agreement that outlines deliverables, timelines, and payment terms.`,
+    content: `Thanks Digital provides professional design services including but not limited to brand identity design, digital design, product design, marketing and growth materials, and development services. Our services are delivered through various engagement models including project-based work, monthly retainers, and enterprise partnerships. Each service engagement is governed by a specific service agreement that outlines deliverables, timelines, and payment terms.`,
   },
   {
     id: "client-obligations",
@@ -22,7 +22,7 @@ export const termsSections = [
   {
     id: "intellectual-property",
     title: "4. Intellectual Property Rights",
-    content: `Upon full payment of all fees, clients receive ownership rights to final deliverables as specified in their service agreement. OPTIMA retains all rights to preliminary designs, concepts not selected for development, and any proprietary methodologies, tools, or processes used in creating deliverables. OPTIMA reserves the right to use completed work in our portfolio and marketing materials unless otherwise agreed in writing.`,
+    content: `Upon full payment of all fees, clients receive ownership rights to final deliverables as specified in their service agreement. Thanks Digital retains all rights to preliminary designs, concepts not selected for development, and any proprietary methodologies, tools, or processes used in creating deliverables. Thanks Digital reserves the right to use completed work in our portfolio and marketing materials unless otherwise agreed in writing.`,
   },
   {
     id: "payment",
@@ -42,7 +42,7 @@ export const termsSections = [
   {
     id: "limitation",
     title: "8. Limitation of Liability",
-    content: `OPTIMA's total liability for any claims arising from our services shall not exceed the total fees paid by the client for the specific service giving rise to the claim. We are not liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, regardless of the cause of action. This limitation applies to the fullest extent permitted by law.`,
+    content: `Thanks Digital's total liability for any claims arising from our services shall not exceed the total fees paid by the client for the specific service giving rise to the claim. We are not liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, regardless of the cause of action. This limitation applies to the fullest extent permitted by law.`,
   },
   {
     id: "termination",

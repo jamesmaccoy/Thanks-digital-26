@@ -51,7 +51,7 @@ export default function Footer() {
               alt=""
             />
             <div>
-              <div className="font-medium text-white">Alex West</div>
+              <div className="font-medium text-white">James Mac</div>
               <div className="text-sm text-textGray">Creative Director</div>
             </div>
           </div>

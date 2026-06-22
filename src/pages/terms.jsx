@@ -12,7 +12,7 @@ export default function TermsPage() {
         <title>Terms of Service | OPTIMA Agency</title>
         <meta
           name="description"
-          content="Read OPTIMA's Terms of Service. Clear terms for our design services, intellectual property rights, payment terms, and client obligations."
+          content="Read Thanks Digital's Terms of Service. Clear terms for our design services, intellectual property rights, payment terms, and client obligations."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -20,7 +20,7 @@ export default function TermsPage() {
       <div className="selection:bg-white selection:text-black">
         <LegalHero
           title="Terms Service"
-          subtitle="These terms govern your use of OPTIMA's design services. We believe in transparent, fair agreements that protect both parties and set clear expectations."
+          subtitle="These terms govern your use of Thanks Digital's design services. We believe in transparent, fair agreements that protect both parties and set clear expectations."
           lastUpdated={termsLastUpdated}
           variant="terms"
         />

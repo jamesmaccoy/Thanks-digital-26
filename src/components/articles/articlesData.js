@@ -16,7 +16,7 @@ export const featuredArticle = {
   description:
     "The brand that gets you to $1M will strangle you at $100M. Learn how to build flexible brand systems that grow with your business without losing the soul that made them special.",
   author: {
-    name: "Alex West",
+    name: "James Mac",
     role: "Creative Director",
     avatar: "/images/avatars/alex-west.webp",
   },
@@ -53,43 +53,43 @@ export const featuredArticle = {
 export const articles = [
   {
     slug: "beyond-minimalism-whats-next-in-web-design",
-    title: "Beyond minimalism: what's next in web design.",
+    title: "sharing a database object using permissions",
     category: "Trends",
     date: "Feb 3, 2026",
     readTime: "8 min read",
-    image: "/images/articles/beyond-minimalism.webp",
+    image: "/images/articles/simpleplek.jpg",
     description:
       "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
     author: {
-      name: "Maya Chen",
-      role: "Design Lead",
-      avatar: "/images/avatars/maya-chen-2.webp",
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "designing-for-human-connection-in-the-ai-era",
-    title: "Designing for human connection in the AI era.",
+    title: "Short term renting in South Africa",
     category: "Trends",
     date: "Apr 1, 2026",
     readTime: "10 min read",
-    image: "/images/articles/ai-era.webp",
+    image: "/images/articles/capitec.jpg",
     description:
-      "As AI reshapes how we build products, the role of human-centered design has never been more critical. Here's how we approach it.",
+      "Lets cover 3 proven design patterns: CRUD using List & Details view. Authentication leveraging a API hook from the humble HTML form. Bundle those together and call it SASS and assign a payment gateway, and you have your own short term legally binding property user agreement",
     author: {
-      name: "Jordan Lee",
-      role: "Product Designer",
-      avatar: "/images/avatars/jordan-lee.webp",
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "the-case-for-design-systems-at-every-scale",
-    title: "The case for design systems at every scale.",
+    title: "Build once. Deploy many times",
     category: "Process",
     date: "Mar 20, 2026",
     readTime: "7 min read",
-    image: "/images/articles/design-systems.webp",
+    image: "/images/articles/capitec.jpg",
     description:
-      "Design systems aren't just for enterprises. Here's how startups can build lightweight, scalable systems from day one.",
+      "Financial databases often run on legacy systems. Understanding the limitations of these systems is key. When you replace them with a new microservice, the original legacy artifact quickly becomes redundant, and a new project lifecycle begins.",
     author: {
       name: "Sarah Park",
       role: "Project Manager",
@@ -106,7 +106,7 @@ export const articles = [
     description:
       "The uncomfortable truth about creative pricing and how to charge what you're worth without losing clients.",
     author: {
-      name: "Alex West",
+      name: "James Mac",
       role: "Creative Director",
       avatar: "/images/avatars/alex-west.webp",
     },
@@ -181,7 +181,7 @@ export const articles = [
     description:
       "We've designed 200+ landing pages. These are the patterns, principles, and psychology tricks that consistently convert.",
     author: {
-      name: "Alex West",
+      name: "James Mac",
       role: "Creative Director",
       avatar: "/images/avatars/alex-west.webp",
     },
@@ -236,11 +236,11 @@ export const categories = [
 
 export const authors = [
   {
-    name: "Alex West",
+    name: "James Mac",
     role: "Creative Director",
-    avatar: "/images/avatars/alex-west.webp",
+    avatar: "/images/avatars/james-mac.jpg",
     articleCount: 3,
-    bio: "15 years in brand and digital design. Writes about strategy, pricing, and the business side of creative work.",
+    bio: "Designer & Software Engineer. Writes about design, development, and the business side of creative work.",
   },
   {
     name: "Maya Chen",

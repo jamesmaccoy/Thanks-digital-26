@@ -87,7 +87,7 @@ export const timelinePhases = [
 export const teamMembers = [
   {
     role: "Creative Director",
-    name: "Alex West",
+    name: "James Mac",
     desc: "Sets the creative vision and ensures every deliverable meets our quality bar. Reviews all work before it reaches you.",
     avatar: "/images/avatars/alex-west.webp",
   },
