@@ -14,7 +14,7 @@ export const services = [
     tagline: "Make your mark unmistakable.",
     description:
       "Complete brand systems that capture your essence and stand out in market. From strategy to execution, we build identities that resonate with your audience and scale with your ambition.",
-    image: "/images/services/brand-identity.webp",
+    image: "/images/services/blog/hero_blacksheep.jpg",
     categories: ["Logo Design", "Visual Identity", "Brand Guidelines", "Positioning", "Naming", "Tone of Voice"],
     deliverables: ["Logo suite (primary, icon, lockups)", "Colour palette & type system", "Brand guidelines (40-80 pages)", "Asset library for digital & print"],
   },
@@ -24,7 +24,7 @@ export const services = [
     tagline: "Websites that convert, not just impress.",
     description:
       "Websites and digital experiences that convert. We design with purpose, creating user journeys that turn visitors into customers while looking world-class.",
-    image: "/images/services/digital-design.webp",
+    image: "/images/services/blog/simpleplek2.png",
     categories: ["Web Design", "Landing Pages", "E-commerce", "UI/UX", "Interaction Design", "Responsive Design"],
     deliverables: ["Figma prototypes (desktop + mobile)", "Design system components", "Developer-ready specs", "Motion & micro-interaction specs"],
   },
@@ -34,7 +34,7 @@ export const services = [
     tagline: "Ship products people can't put down.",
     description:
       "End-to-end product design from concept to launch. We craft intuitive interfaces and seamless experiences that users love and businesses rely on for growth.",
-    image: "/images/services/product-design.webp",
+    image: "/images/services/blog/KV.jpg",
     categories: ["Mobile Apps", "SaaS Platforms", "Design Systems", "Prototyping", "User Research", "Usability Testing"],
     deliverables: ["User flows & wireframes", "High-fidelity UI screens", "Interactive prototypes", "Component library in Figma"],
   },
@@ -44,7 +44,7 @@ export const services = [
     tagline: "Creative that drives measurable growth.",
     description:
       "Strategic creative that drives measurable results. From campaign design to conversion optimization, we help you grow faster with design that performs across every channel.",
-    image: "/images/services/marketing-growth.webp",
+    image: "/images/services/blog/hero_ACBA.jpg",
     categories: ["Campaign Design", "Social Media", "Email Design", "Ad Creatives", "Pitch Decks", "Infographics"],
     deliverables: ["Multi-channel campaign assets", "Social media template system", "Email templates (responsive HTML)", "Performance-optimised ad creatives"],
   },
@@ -54,7 +54,7 @@ export const services = [
     tagline: "Pixel-perfect code, production-ready.",
     description:
       "Pixel-perfect implementation that brings designs to life. Clean, performant code built with modern frameworks and best practices — no shortcuts, no tech debt.",
-    image: "/images/services/development.webp",
+    image: "/images/services/blog/santam-6.jpg",
     categories: ["Front-end Dev", "React / Next.js", "CMS Integration", "Performance", "Webflow", "Animation"],
     deliverables: ["Production-ready codebase", "CMS setup & content modeling", "Performance audit & optimisation", "Deployment & handoff docs"],
   },

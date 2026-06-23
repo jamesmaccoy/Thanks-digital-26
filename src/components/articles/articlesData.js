@@ -12,13 +12,13 @@ export const featuredArticle = {
   category: "Strategy",
   date: "Apr 16, 2026",
   readTime: "12 min read",
-  image: "/images/articles/building-brands.webp",
+  image: "/images/articles/james/spaceA.gif",
   description:
     "The brand that gets you to $1M will strangle you at $100M. Learn how to build flexible brand systems that grow with your business without losing the soul that made them special.",
   author: {
     name: "James Mac",
     role: "Creative Director",
-    avatar: "/images/avatars/alex-west.webp",
+    avatar: "/images/avatars/james-mac.jpg",
   },
   body: [
     {
@@ -57,7 +57,7 @@ export const articles = [
     category: "Trends",
     date: "Feb 3, 2026",
     readTime: "8 min read",
-    image: "/images/articles/simpleplek.jpg",
+    image: "/images/articles/james/spaceA.gif",
     description:
       "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
     author: {
@@ -72,7 +72,7 @@ export const articles = [
     category: "Trends",
     date: "Apr 1, 2026",
     readTime: "10 min read",
-    image: "/images/articles/capitec.jpg",
+    image: "/images/articles/james/sp_flow.png",
     description:
       "Lets cover 3 proven design patterns: CRUD using List & Details view. Authentication leveraging a API hook from the humble HTML form. Bundle those together and call it SASS and assign a payment gateway, and you have your own short term legally binding property user agreement",
     author: {
@@ -102,7 +102,7 @@ export const articles = [
     category: "Business",
     date: "Mar 5, 2026",
     readTime: "9 min read",
-    image: "/images/articles/pricing-creative.webp",
+    image: "/images/articles/james/spaceB.gif",
     description:
       "The uncomfortable truth about creative pricing and how to charge what you're worth without losing clients.",
     author: {
@@ -117,7 +117,7 @@ export const articles = [
     category: "Process",
     date: "Feb 18, 2026",
     readTime: "6 min read",
-    image: "/images/articles/design-critiques.webp",
+    image: "/images/articles/james/spaceC.gif",
     description:
       "Most design critiques are broken. Here's the framework we use to give actionable feedback without killing creativity.",
     author: {
@@ -132,7 +132,7 @@ export const articles = [
     category: "Business",
     date: "Jan 28, 2026",
     readTime: "5 min read",
-    image: "/images/articles/paid-discovery.webp",
+    image: "/images/articles/james/spaceD.gif",
     description:
       "Free proposals are a race to the bottom. We switched to paid discovery phases and both our work and client relationships got dramatically better.",
     author: {
