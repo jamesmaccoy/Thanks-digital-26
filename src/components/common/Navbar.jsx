@@ -31,7 +31,7 @@ export default function Navbar() {
         hour: "2-digit",
         minute: "2-digit",
         hour12: true,
-        timeZone: "America/New_York",
+        timeZone: "Africa/Johannesburg",
       });
       setNewYorkTime(timeString);
       if (clockRef.current) {
@@ -201,7 +201,7 @@ export default function Navbar() {
           THANKS
         </Link>
         <div className="hidden md:block text-sm text-textGray">
-          New York (US) | <span>{newYorkTime}</span>
+          Cape Town (ZA) | <span>{newYorkTime}</span>
         </div>
         <div className="flex items-center gap-6">
           <Link

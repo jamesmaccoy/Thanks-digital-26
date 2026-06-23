@@ -95,6 +95,68 @@ export const articles = [
       role: "Designer & Software Engineer",
       avatar: "/images/avatars/james-mac.jpg",
     },
+    body: [
+      {
+        paragraphs: [
+          "In a world where digital threats are ever-present, we provide the strategies and tools to protect your assets, transforming risk into security and ensuring a prosperous future for generations to come.",
+        ],
+      },
+
+      {
+        heading: "The &quot;Nothing New Under the Sun&quot; Approach to Modern UX",
+        paragraphs: [
+          "Ecclesiastes 1:9 tells us, There is &quot;nothing new under the sun.&quot; While King Solomon wasn't talking about software, this timeless wisdom is a powerful guide for product development today. We spend countless hours reinventing the wheel, fighting against legacy systems, and building complex solutions for problems that have, in many ways, already been solved.",
+          "What if we stopped? What if we embraced this truth and built a system designed to leverage proven patterns instead of starting from scratch?",
+        ],
+      },
+      {
+        heading: "Phase 1: Designing the Ideal Experience, Unimpeded by Legacy",
+        paragraphs: [
+          "Before a single line of code is written, our first step is to design the ideal user experience. This means ignoring the limitations of our existing legacy framework and focusing purely on the user.",
+          "Empathy Mapping with FigJam: We kick off the process with a collaborative empathy mapping session. Using a tool like FigJam, we get shareholders and stakeholders in a room to identify key pain points. What are their frustrations? What do they truly need to accomplish? We capture these insights to form a clear, human-centered foundation for our design.",
+          "The &quot;golden path&quot; — the blueprint for the entire project.",
+        ],
+        image:{
+          images:"/images/work/james/capitecapp.png", 
+          caption: "The Capitec app",
+        },
+      },
+      {
+        heading: "Phase 2: Programmatic Testing for Consistent UX",
+        paragraphs: [
+          "Once we have our ideal design, how do we ensure it's implemented correctly? This is where we bridge the gap between design and development with a powerful, automated process.",
+          "We create a programmatic test that assumes our &quot;golden&quot; UX patterns. This test becomes a digital gatekeeper. When a developer submits a new pull request (PR), this test automatically runs, validating that the new code adheres to the established design patterns and principles.",
+          "This isn't about catching bugs; it's about enforcing design consistency. By making this a mandatory part of our CI/CD pipeline, we can confidently assume a better user experience with every new release. We get automated reports confirming the work is well-executed, eliminating manual checks and ensuring that our product remains true to the original design vision.",
+        ],
+        image: {
+          images:"/images/work/james/capitec_questions.jpg", 
+          caption: "Pre qualifying questions template to deduce the cover amount",
+        },
+      },
+      {
+        heading: "The &quot;Solomon's Patterns&quot; Framework",
+        paragraphs: [
+          "This entire process can be packaged into a valuable service. Imagine a platform, accessible behind a paywall, that provides this exact design framework.",
+          "The Dashboard: After payment, users get access to a dashboard filled with custom, drag-and-drop components. These aren't just pretty pictures; they are pre-validated, modular building blocks of a great user experience.",
+          "No-Code Product Assembly: With these components, users can assemble new products or features in a fraction of the time it would take to code them from scratch. The entire interface is a no-code canvas, allowing teams to rapidly prototype and build, all while adhering to proven design patterns.",
+          "By using these methods, we're not just improving a coded framework; we're fundamentally changing our approach to product development. We're embracing the idea that some patterns are universal and that the most effective path forward is often to leverage, not reinvent, what works.",
+        ],
+        image: {
+          images:"/images/work/james/capitec_flow.jpg", 
+          caption: "Maintaining the Policy object using a design framework to communicate the state of the policy",
+        },
+      },
+      {
+        heading: "The difference between single /once off and reoccurring payments",
+        paragraphs: [
+          "",
+        ],
+        image: {
+          images:"/images/work/james/capitec.jpg", 
+          caption: "Responsive stateful dashboard articulating where the user stands in the policy",
+        },
+      },
+    ],
   },
   {
     slug: "pricing-creative-work-without-undervaluing-it",

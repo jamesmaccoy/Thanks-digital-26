@@ -4,7 +4,7 @@ import { allArticles } from "@/components/articles/articlesData";
 
 const fallbackBody = (article) => [
   {
-    heading: `Short ${article.category.toLowerCase()} term renting in South Africa`,
+    heading: `Why ${article.category.toLowerCase()} Short term renting in South Africa`,
     paragraphs: [
       `${article.description} SimplePlek allows its guest to Join a Stay for free, but in order to create a booking the user needs to have an active membership. Only customers with an active membership can create bookings, and have access to view entitled packages with the privileges a membership provides.`,
     ],
@@ -124,6 +124,12 @@ export default function ArticleDetailPage({ article, relatedArticles }) {
                           {paragraph}
                         </p>
                       ))}
+                      {section.image && section.image.images && (
+                        <div key={section.image.caption} className="mb-4">
+                          <img src={section.image.images} alt={section.image.caption} className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition duration-700" />
+                          <div className="text-sm text-textGray mt-2">{section.image.caption}</div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
