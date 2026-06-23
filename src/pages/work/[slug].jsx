@@ -24,9 +24,9 @@ const detailByCategory = {
     outcome: "The new experience improved perceived quality, reduced confusion, and gave the team a web system they could extend after launch.",
   },
   "Design System": {
-    challenge: "Design and engineering were moving quickly, but inconsistency was slowing every release. Teams needed a shared language for components, states, content, and handoff.",
-    approach: "We audited product surfaces, consolidated patterns, designed reusable components, defined usage rules, and documented a system that could live with real product work.",
-    outcome: "The system reduced repeated decisions, improved design-to-development alignment, and made the product feel more cohesive at scale.",
+    challenge: "As the telesales agent completes the call, it triggers an automatic appointment confirmation, and the user is notified via a responsive mailer with the appointment date and time, along with a summary of their current service provider.",
+    approach: "Traditional print needs a designer to update content, then send to print house… what a luss! Now the CMS controls content, and with a print style sheet(css), anyone can print out thousands of brochures, with the latest services as they are created. Cutting out the need of a designer!",
+    outcome: "Once we build this functionality beautiful site, we needed traffic. To gain exposure we created social posts. The visitors had a re-advertising program, that followed users around on the internet for a month after.",
   },
 };
 
@@ -52,8 +52,8 @@ export default function WorkDetailPage({ project, relatedProjects }) {
   return (
     <>
       <Head>
-        <title>{project.title} Case Study | OPTIMA Work</title>
-        <meta name="description" content={`${project.title} - ${project.desc}. A detailed OPTIMA case study covering challenge, strategy, execution, and measurable results.`} />
+        <title>{project.title} Case Study | Thanks Digital Work</title>
+        <meta name="description" content={`${project.title} - ${project.desc}. A detailed Thanks Digital case study covering challenge, strategy, execution, and measurable results.`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -87,7 +87,7 @@ export default function WorkDetailPage({ project, relatedProjects }) {
                 <div className="text-xs uppercase tracking-[0.26em] text-white/50 mb-4">Scope</div>
                 <p className="text-xl md:text-2xl font-medium leading-tight mb-6">{project.desc}</p>
                 <p className="text-sm md:text-base text-white/65 leading-7">
-                  {project.summary || `${project.title} is a focused ${project.category.toLowerCase()} engagement built to sharpen perception, improve usability, and create a system that can keep scaling after launch.`}
+                  {project.summary || `${project.title} A wordpress build ${project.category.toLowerCase()} , linked with a CRM to create a sales funnel for the sales department. The site was up and running in 3 days, leaving me budget to cover all the other digital aspect I needed to address.`}
                 </p>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function WorkDetailPage({ project, relatedProjects }) {
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20">
             <div>
               <div className="text-xs uppercase tracking-[0.28em] text-textGray mb-5">Case study</div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">Strategy, craft, and measurable change.</h2>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">A utility company, selling energy contracts in the UK, utilizing digital engage with their customers</h2>
             </div>
 
             <div className="space-y-12">

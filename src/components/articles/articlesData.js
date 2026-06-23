@@ -8,7 +8,7 @@ export const heroStats = [
 
 export const featuredArticle = {
   slug: "building-brands-that-scale",
-  title: "Building brands that scale.",
+  title: "Sharing a database object using permissions",
   category: "Strategy",
   date: "Apr 16, 2026",
   readTime: "12 min read",
@@ -91,14 +91,14 @@ export const articles = [
     description:
       "Financial databases often run on legacy systems. Understanding the limitations of these systems is key. When you replace them with a new microservice, the original legacy artifact quickly becomes redundant, and a new project lifecycle begins.",
     author: {
-      name: "Sarah Park",
-      role: "Project Manager",
-      avatar: "/images/avatars/sarah-park.webp",
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "pricing-creative-work-without-undervaluing-it",
-    title: "Pricing creative work without undervaluing it.",
+    title: "Creating a calendar component using Payload CMS.",
     category: "Business",
     date: "Mar 5, 2026",
     readTime: "9 min read",
@@ -107,13 +107,13 @@ export const articles = [
       "The uncomfortable truth about creative pricing and how to charge what you're worth without losing clients.",
     author: {
       name: "James Mac",
-      role: "Creative Director",
-      avatar: "/images/avatars/alex-west.webp",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "how-we-run-design-critiques-that-actually-work",
-    title: "How we run design critiques that actually work.",
+    title: "Authentication using Payload CMS.",
     category: "Process",
     date: "Feb 18, 2026",
     readTime: "6 min read",
@@ -123,12 +123,12 @@ export const articles = [
     author: {
       name: "Maya Chen",
       role: "Design Lead",
-      avatar: "/images/avatars/maya-chen-2.webp",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "why-we-ditched-proposals-for-paid-discovery",
-    title: "Why we ditched proposals for paid discovery.",
+    title: "Creating an agentic chatbot using Payload CMS.",
     category: "Business",
     date: "Jan 28, 2026",
     readTime: "5 min read",
@@ -138,22 +138,49 @@ export const articles = [
     author: {
       name: "Jordan Lee",
       role: "Product Designer",
-      avatar: "/images/avatars/jordan-lee.webp",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
     slug: "motion-design-as-a-competitive-advantage",
-    title: "Motion design as a competitive advantage.",
+    title: "Using a hook to handle form submissions in Next.js.",
     category: "Design",
     date: "Jan 15, 2026",
     readTime: "7 min read",
     image: "/images/articles/motion-design.webp",
     description:
-      "Subtle motion isn't decoration — it's communication. How we use animation to improve usability, engagement, and brand perception.",
+      "Forms are easily the most overlooked / misunderstood chapters in UX. With little action and knowledge of the DOM, you can perform surgery on a database if executed correctly. Done incorrectly it can cost millions for a humble form.Simplified we are adding a pre made component to our site and displaying it on the front end to clients in order to request a booking",
+    body: [
+      {
+        heading: "Step 2 Form submissions",
+        paragraphs: [
+          " Add the Shadcn premade component to your site in order to display it on front end",
+          "|_ 📁 app",
+          "|_ 📁 components",
+          "|_ 📁 ui",
+          "|_ 📄 card.tsx",
+          "|_ 📄 calendar.tsx",
+          "|_ 📁 collections",
+          "|_ 📁 fields",
+          "|_ 📄 paylaod types.ts",
+          "|_ 📄 payload.config.ts",
+          "Step 3 Handle the form submission",
+          "Step 4 Validate the form data",
+          "Step 5 Submit the form data to the database",
+        ],
+      },
+      {
+        heading: "Step 3 Handle the form submission",
+        paragraphs: [
+          "Step 4 Validate the form data",
+          "Step 5 Submit the form data to the database",
+        ],
+      },
+    ],
     author: {
-      name: "Maya Chen",
-      role: "Design Lead",
-      avatar: "/images/avatars/maya-chen-2.webp",
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
@@ -166,9 +193,9 @@ export const articles = [
     description:
       "Not all feedback is created equal. Learn how to decode what clients really mean and turn vague notes into actionable design changes.",
     author: {
-      name: "Sarah Park",
-      role: "Project Manager",
-      avatar: "/images/avatars/sarah-park.webp",
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
     },
   },
   {
@@ -182,7 +209,7 @@ export const articles = [
       "We've designed 200+ landing pages. These are the patterns, principles, and psychology tricks that consistently convert.",
     author: {
       name: "James Mac",
-      role: "Creative Director",
+      role: "Designer & Software Engineer",
       avatar: "/images/avatars/alex-west.webp",
     },
     body: [

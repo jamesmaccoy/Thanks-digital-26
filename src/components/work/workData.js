@@ -92,7 +92,7 @@ export const allProjects = [
     category: "Design System",
     desc: "Digital Transformation & Design System",
     year: "2024",
-    image: "/images/work/hero/6.jpg",
+    image: "/images/work/hero/5.jpg",
   },
   {
     num: "07",
