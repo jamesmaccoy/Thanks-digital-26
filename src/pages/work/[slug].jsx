@@ -3,30 +3,30 @@ import Link from "next/link";
 import { allProjects } from "@/components/work/workData";
 
 const detailByCategory = {
-  "Brand Strategy": {
-    challenge: "The company had momentum, but the market could not clearly understand what made the offer different. Sales teams were explaining too much, product pages felt scattered, and the brand needed a sharper strategic foundation.",
-    approach: "We rebuilt the positioning system from the inside out: audience segments, category language, proof points, narrative hierarchy, and a visual direction that could scale across launch campaigns, sales decks, and product touchpoints.",
-    outcome: "The new strategy made the brand easier to sell, easier to remember, and easier for internal teams to use without diluting the message.",
+ "Brand Strategy": {
+    challenge: "The short-term rental market suffers from a deep crisis of institutional trust, surveillance anxieties, and systemic fragmentation. The existing brand identity was too generic to carry the heavy compliance and security reassurances required by modern users.",
+    approach: "We architected a transparent brand strategy that anchors Simple Plek as a digital sanctuary. We implemented modular communication structures and sharp visual markers that signal ironclad data privacy and uncompromising user protection across all digital touchpoints.",
+    outcome: "The brand evolved from a basic booking tool into an authoritative trust network, establishing deep credibility and user alignment before a single interaction takes place."
   },
   "Brand Identity": {
-    challenge: "The existing identity looked polished but generic. It did not carry enough emotion, distinction, or system logic to support a growing product and expanding marketing team.",
-    approach: "We created a flexible identity system with sharper art direction, modular layouts, expressive typography, and brand behaviours that could move from product UI to campaigns without feeling disconnected.",
-    outcome: "The brand gained a recognisable voice and a visual system that felt premium, memorable, and practical for daily execution.",
+    challenge: "The brand possessed massive institutional momentum, but explaining a complex, highly regulated insurance product in a saturated market led to scattered product narratives and friction for sales teams.",
+    approach: "We rebuilt the positioning system around transparency, defining clear category language, data privacy proof points, and a unified narrative hierarchy designed to establish immediate customer trust.",
+    outcome: "The new strategy unified the brand message across campaigns and products, making the insurance offering easily understandable, highly authoritative, and simple to scale without message dilution."
   },
   "Product Design": {
-    challenge: "Users understood the value after onboarding, but too many people were dropping before the product had a chance to prove itself. The interface needed more clarity, hierarchy, and trust.",
-    approach: "We mapped the highest-friction journeys, redesigned key flows, simplified decision points, and created reusable product patterns for the team to ship faster after handoff.",
-    outcome: "The product became easier to navigate, faster to understand, and more consistent across screens and teams.",
+    challenge: "Managing guest access and rental compliance carries immense regulatory and operational risk. High-friction onboarding loops and ambiguous data entry paths were leading to severe drop-offs among security-conscious property owners.",
+    approach: "We redesigned the host portal around the ultimate 'golden path.' By utilizing rock-solid UI patterns, seamless tenant validation flows, and clear, gated access control structures, we isolated operational complexity without sacrificing interface clarity or user delight.",
+    outcome: "The interface became an intuitive, highly resilient product ecosystem that streamlines secure CRUD execution and automatically maintains compliance integrity across every user interaction."
   },
-  "Web Design": {
-    challenge: "The website was attracting visitors but not converting them. The story, proof, and calls-to-action were not sequenced in a way that helped people build confidence.",
-    approach: "We designed a conversion-focused web experience with stronger messaging, editorial layouts, proof moments, responsive components, and a clear path from curiosity to action.",
-    outcome: "The new experience improved perceived quality, reduced confusion, and gave the team a web system they could extend after launch.",
+"Web Design": {
+    challenge: "The digital web interface was bringing in significant traffic, but users were dropping off due to an over-complicated narrative structure and a lack of sequential, trust-building user flows.",
+    approach: "We mapped out the ideal 'golden path' for conversion, relying on clean editorial layouts, explicit data safety indicators, and friction-free interaction patterns that effortlessly guided visitors from curiosity to secure action.",
+    outcome: "The redesigned digital experience radically optimized conversion rates, elevated perceived trust, and provided the client with a modular web framework that scales safely over time."
   },
   "Design System": {
-    challenge: "As the telesales agent completes the call, it triggers an automatic appointment confirmation, and the user is notified via a responsive mailer with the appointment date and time, along with a summary of their current service provider.",
-    approach: "Traditional print needs a designer to update content, then send to print house… what a luss! Now the CMS controls content, and with a print style sheet(css), anyone can print out thousands of brochures, with the latest services as they are created. Cutting out the need of a designer!",
-    outcome: "Once we build this functionality beautiful site, we needed traffic. To gain exposure we created social posts. The visitors had a re-advertising program, that followed users around on the internet for a month after.",
+    challenge: "Updating critical documentation, notifications, and client-facing interfaces across siloed product lines created massive design fragmentation, manual bottlenecks, and compliance vulnerabilities.",
+    approach: "We implemented an immutable, code-driven design system wrapped in a 'build once, deploy many times' philosophy. We integrated programmatic testing gates into the CI/CD pipeline and deployed dynamic CSS print/digital style sheets controlled directly via the CMS.",
+    outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
 };
 
@@ -87,7 +87,7 @@ export default function WorkDetailPage({ project, relatedProjects }) {
                 <div className="text-xs uppercase tracking-[0.26em] text-white/50 mb-4">Scope</div>
                 <p className="text-xl md:text-2xl font-medium leading-tight mb-6">{project.desc}</p>
                 <p className="text-sm md:text-base text-white/65 leading-7">
-                  {project.summary || `${project.title} A wordpress build ${project.category.toLowerCase()} , linked with a CRM to create a sales funnel for the sales department. The site was up and running in 3 days, leaving me budget to cover all the other digital aspect I needed to address.`}
+                  {project.summary || `${project.title} generic fallback heading ${project.category.toLowerCase()} ,generic fallback body.`}
                 </p>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function WorkDetailPage({ project, relatedProjects }) {
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20">
             <div>
               <div className="text-xs uppercase tracking-[0.28em] text-textGray mb-5">Case study</div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">A utility company, selling energy contracts in the UK, utilizing digital engage with their customers</h2>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">{project.quote} </h2>
             </div>
 
             <div className="space-y-12">

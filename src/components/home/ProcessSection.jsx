@@ -5,11 +5,31 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
-  { num: "01", title: "Listen & Learn", desc: "Every engagement starts with understanding. We dive deep into your business, your audience, and your goals. No assumptions, just research and active listening." },
-  { num: "02", title: "Strategy First", desc: "Before any pixels are pushed, we align on direction. We define what success looks like and chart the most efficient path to get there." },
-  { num: "03", title: "Iterative Design", desc: "We work in tight feedback loops. Showing progress early and often ensures we stay on track and avoid big surprises at the end of a sprint." },
-  { num: "04", title: "Refine Until Right", desc: "Your feedback shapes the work. We iterate based on what's working and what isn't, refining until we're all genuinely excited about the result." },
-  { num: "05", title: "Launch & Learn", desc: "We stick around for implementation and measure what matters. Every project teaches us something that makes the next one even better." },
+  { 
+    num: "01", 
+    title: "Discovery & Autonomy Mapping", 
+    desc: "We analyze your high-stakes requirements and identify the 'golden path.' This isn't just about business goals; it's about defining where user autonomy and data privacy take precedence." 
+  },
+  { 
+    num: "02", 
+    title: "Architectural Strategy", 
+    desc: "Before a pixel is rendered, we define the immutable patterns. We map out secure CRUD structures and authentication hooks, ensuring the foundation is built for longevity, not just the next sprint." 
+  },
+  { 
+    num: "03", 
+    title: "Iterative Sanctuary Design", 
+    desc: "We prototype high-fidelity experiences that prioritize user delight. By showing progress early and often, we ensure the UI remains intuitive while the backend security remains uncompromising." 
+  },
+  { 
+    num: "04", 
+    title: "Programmatic Validation", 
+    desc: "Your feedback refines the experience, while automated CI/CD testing gates enforce consistency. We iterate to perfection, ensuring no design vision is diluted or security protocol bypassed during engineering." 
+  },
+  { 
+    num: "05", 
+    title: "Deploy Once, Scale Safely", 
+    desc: "We move to launch with robust, 'deploy many times' architecture. We stick around to monitor the impact, ensuring the product evolves as a secure, performant, and delightful sanctuary for your users." 
+  }
 ];
 
 export default function ProcessSection() {
@@ -48,12 +68,10 @@ export default function ProcessSection() {
       {/* Fixed heading area */}
       <div className="px-6 md:px-20 pt-20 pb-10 flex-shrink-0">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-4 lg:mb-6">
-          Our process delivers<br />results, not surprises.
+        Our process builds sanctuary, <br />not just software.
         </h2>
         <p className="text-base lg:text-xl text-textGray max-w-2xl">
-          We&apos;ve refined our approach over hundreds of projects. Every step is
-          designed to minimize friction and maximize impact. From first call to
-          final delivery, you&apos;ll know exactly where we are.
+        Refined over hundreds of projects, my methodology treats security as a fundamental creative constraint, not an afterthought. Every phase is engineered to eliminate friction, maximize trust, and ensure your digital experiences are built to be immutable.
         </p>
       </div>
 

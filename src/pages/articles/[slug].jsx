@@ -4,39 +4,15 @@ import { allArticles } from "@/components/articles/articlesData";
 
 const fallbackBody = (article) => [
   {
-    heading: `Why ${article.category.toLowerCase()} Short term renting in South Africa`,
+    heading: `Insert article heading here ${article.category.toLowerCase()} generic fallback heading`,
     paragraphs: [
-      `${article.description} SimplePlek allows its guest to Join a Stay for free, but in order to create a booking the user needs to have an active membership. Only customers with an active membership can create bookings, and have access to view entitled packages with the privileges a membership provides.`,
+      `Insert article body paragraph here ${article.description} generic fallback body paragraph`,
     ],
   },
   {
-    heading: "😍 Invite someone",
+    heading: "generic fallback heading",
     paragraphs: [
-      "After the host creates a Plek with a Pro membership, a customer can invite someone, by checking the availability of that plek. A package is then suggested after selecting the duration and they can then book now or invite someone else to book, while creating analytics for that plek",
-      "Membership allows access to view sensitive information, such as Lockbox code, or WIFI passwords. The details of the Plek are extended to guest that have accepted the invite to the booking.",
-    ],
-  },
-  {
-    heading: "📦 Drafting a New Plek",
-    paragraphs: [
-      "If a customer has a Pro Membership the navigation will show a Manage link. This allows a member to add a Plek either using the dashboard or to Draft a New Plek using the assistant prompt suggestion </br>The assistant suggests packages including the Category and Entitlement, where you can adjust the duration and then save the package for customers to consume. The customer sees this as an availability for exisiting bookings that can be synced with your external .ics calendar",
-      "Example: Luxury Night inc wine sommelier - 3 Nights, Weekly & Monthly package, and perhaps a add on Bottle of wine package.",
-    ],
-  },
-  {
-    heading: "🥖 Access Control",
-    paragraphs: [
-      "As an Admin of the platform you can publish and remove Pleks while members see a LLM assistant with Checkpoints that they can return to anytime. The sessions resumes at each saved duration start date serving the relevant package drafted by the admin with their entitlement.",
-      "SimplePlek makes lease agreements easily available and lets you know where you stand as a tenant / mortgagor allowing you to choose rent & bond repayments options with the remaining total displayed realtime.",
-      "These programming roles allow customers to design their agreement and payment terms with an annual statement of all activity of transactions",
-    ],
-  },
-  {
-    heading: "🏦 Payment gateway",
-    paragraphs: [
-      "There is no fintech company in South Africa allowed to use repeat payments due to our legislation that protects us against unlawful deductions that frustratingly come off our account each month without our permission.",
-      "The app store facilitates pausing these reoccurring payments natively putting an end to FSP's convenient debit orders process but I am yet to build this automated reoccurring payment process inside SimplePlek, and currently use Yoco as a payment gateway",
-      "An addon package is displayed inside the booking for repeat payment until a convenient debit order process is built and permitted but id like to point out our failure at realising the ease at which a queuing system can be established leveraging the app store, and i would like to invite collaborators on this project for their own short term rentals platform",
+      "generic fallback body",
     ],
   },
 ];

@@ -8,38 +8,39 @@ const services = [
   {
     name: "Brand Identity",
     title: "[01] Brand Identity",
-    description: "Complete brand systems that capture your essence and stand out in market. From strategy to execution, we build identities that resonate and scale.",
+    description: "Complete brand systems built on transparency and deep institutional trust. I design identities that capture your core ethos and build an unshakeable bond with users weary of default tracking.",
     image: "/images/services/blog/hero_blacksheep.jpg",
-    categories: ["Logo Design", "Visual Identity", "Brand Guidelines", "Positioning"],
+    categories: ["Brand Positioning", "Visual Systems", "Identity Guidelines", "Strategic Messaging"],
   },
   {
     name: "Digital Design",
     title: "[02] Digital Design",
-    description: "Websites and digital experiences that convert. We design with purpose, creating user journeys that turn visitors into customers.",
+    description: "Websites and digital experiences that delight without exploiting. I map out clean, intentional user journeys that respect user autonomy, proving that high conversion rates don't require dark patterns.",
     image: "/images/services/blog/simpleplek2.png",
-    categories: ["Web Design", "Landing Pages", "E-commerce", "UI/UX"],
+    categories: ["Web Design", "Secure E-commerce", "Landing Pages", "Frictionless UI/UX"],
   },
   {
     name: "Product Design",
     title: "[03] Product Design",
-    description: "End-to-end product design from concept to launch. We craft intuitive interfaces and seamless experiences that users love and businesses rely on.",
+    description: "End-to-end product design optimized for the 'golden path.' I craft intuitive, resilient interfaces that seamlessly handle complex user needs while keeping data private, protected, and localized by default.",
     image: "/images/services/blog/KV.jpg",
-    categories: ["Mobile Apps", "SaaS Platforms", "Design Systems", "Prototyping"],
+    categories: ["SaaS Platforms", "Secure Mobile Apps", "High-Fidelity Prototyping", "Immutable Design Systems"],
   },
   {
-    name: "Marketing & Growth",
-    title: "[04] Marketing & Growth",
-    description: "Strategic creative that drives measurable results. From campaign design to conversion optimization, we help you grow faster with design that performs.",
-    image: "/images/services/blog/hero_ACBA.jpg",
-    categories: ["Campaign Design", "Social Media", "Email Design", "Ad Creatives"],
-  },
-  {
-    name: "Development",
-    title: "[05] Development",
-    description: "Pixel-perfect implementation that brings designs to life. Clean, performant code built with modern frameworks and best practices.",
+    name: "Dev & Automation",
+    title: "[04] Dev & Automation",
+    description: "Pixel-perfect, 'build once, deploy many times' implementation. Clean, performant code reinforced by programmatic testing gates in the CI/CD pipeline to ensure your design vision and UX security survive every release.",
     image: "/images/services/blog/santam-6.jpg",
-    categories: ["Front-end Dev", "React / Next.js", "CMS Integration", "Performance"],
+    categories: ["Front-end Dev (React / Next.js)", "Automated UX Testing", "Secure CRUD Architecture", "CMS Integration"],
   },
+  {
+    name: "Trust & Growth",
+    title: "[05] Trust & Growth",
+    description: "Strategic creative that drives measurable momentum in high-stakes markets. I leverage rock-solid, compliant design patterns—from seamless authentication hooks to gated access control—to turn potential risk into a distinct competitive advantage.",
+    image: "/images/services/blog/hero_ACBA.jpg",
+    categories: ["Secure Paywalls", "Conversion Optimization", "Campaign Creative", "Compliance-First UX"],
+  }
+
 ];
 
 export default function ServicesSection() {
@@ -70,7 +71,7 @@ export default function ServicesSection() {
         <div className="sticky top-32">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 tracking-tight">Services</h2>
           <p className="text-textGray text-lg mb-10">
-            Full-spectrum design capabilities under one roof. Whether you need a complete brand overhaul or ongoing creative support, we have the expertise to deliver. No outsourcing, no excuses, just exceptional work from our senior team.
+          Full-spectrum design capabilities architected for digital autonomy. Whether you need a secure product ecosystem or a brand that stands as a sanctuary, I have the senior expertise to build it. No bloated agency overhead, no data-leaking outsourcing—just uncompromised, high-stakes execution.
           </p>
           <ul className="hidden lg:block space-y-4 text-xl lg:text-2xl font-medium text-textGray">
             {services.map((service, i) => (

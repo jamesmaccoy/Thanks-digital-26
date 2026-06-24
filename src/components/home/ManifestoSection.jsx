@@ -69,26 +69,23 @@ export default function ManifestoSection() {
     <div ref={sectionRef}>
       <section className="py-20 lg:py-32 px-6 md:px-20 flex items-center min-h-[50vh] lg:min-h-[70vh] 3xl:max-w-[1400px] 3xl:mx-auto">
         <RevealText className="text-2xl md:text-4xl lg:text-6xl font-medium leading-tight">
-          Traditional agencies perfected the art of the pitch. We perfected the art of the work. When you need design that moves at the speed of your ambition, you need a different kind of studio.
+        I perfected a "build once, deploy many times" philosophy. By leveraging immutable architectural patterns, I ensure ironclad data privacy and secure design never come at the expense of user delight.
         </RevealText>
       </section>
 
       <section className="py-16 lg:py-20 px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 items-start border-t border-[#222] 3xl:max-w-[1400px] 3xl:mx-auto">
         <RevealText className="text-xl md:text-2xl lg:text-4xl max-w-lg">
-          Clients paying for process instead of progress. Great ideas dying in revision purgatory.
+        In an era of omnipresent digital surveillance, you need a partner who builds digital sanctuaries. To care as much as your users do means fiercely protecting both their autonomy and their experience.
         </RevealText>
         <div className="space-y-10 text-textGray text-lg max-w-md">
           <p className="fade-up">
-          A digital design partner for startups and brave businesses.
-          I create integrated brand, product and service experiences.
+          I rely on rock-solid design patterns—from seamless authentication hooks to gated access control—to turn corporate overreach into elegant security. To guarantee this vision survives engineering, I utilize programmatic testing gates in the CI/CD pipeline to automatically enforce UX consistency across every single release.
           </p>
           <p className="fade-up">
-            We create design that actually solves problems. We&apos;re obsessive
-            about the details because that&apos;s what our clients pay us for. To
-            care as much as they do.
+          I create design that solves high-stakes problems, protecting the humans on the other side of the screen from default tracking.
           </p>
           <p className="text-white font-medium fade-up">
-            That&apos;s the Thanks Digital way. Simple, but not easy.
+          That's the Thanks Digital way. Simple to experience, but not easy to build.
           </p>
           <div className="pt-10 border-t border-[#222] flex items-center gap-4 fade-up">
             <img

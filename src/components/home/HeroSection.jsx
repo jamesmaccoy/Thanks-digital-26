@@ -81,7 +81,7 @@ export default function HeroSection() {
 
       <div className="w-full lg:w-1/3 md:ml-auto mt-3 text-center lg:text-left text-sm md:text-xl text-textGray hero-desc opacity-0 px-2 md:px-0 mb-6 lg:mb-0">
       A digital design partner for startups and brave businesses.
-      I create integrated brand, product and service experiences.
+      I create integrated brand, product, and service experiences that are radically user-centric and architecturally secure.
       </div>
 
       {/* Floating Profile Card */}
