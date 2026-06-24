@@ -101,7 +101,7 @@ export default function HeroSection() {
           <span className="text-textGray">Plans start at</span>
           <span>R7,500 / m</span>
         </div>
-        <button className="w-full bg-white text-black py-2 rounded-lg font-medium text-sm hover:bg-gray-200 transition-colors">
+        <button className="payment_url w-full bg-white text-black py-2 rounded-lg font-medium text-sm hover:bg-gray-200 transition-colors" data-id="book_call">
           Book a 15-Min Call
         </button>
       </div>

@@ -12,6 +12,11 @@ const PACKAGE_LABELS = {
   reception: "Host a reception",
   "24h_window": "24 hour window",
   ReserveOpportunity: "Reserve an opportunity",
+  growth_monthly: "Growth Plan - Monthly Retainer",
+  growth_quarterly: "Growth Plan - Quarterly Retainer (Save 15%)",
+  scale_monthly: "Scale Plan - Monthly Retainer",
+  scale_quarterly: "Scale Plan - Quarterly Retainer (Save 15%)",
+  book_call: "15-Min Consultation Call",
 };
 
 function getType(req) {

@@ -68,7 +68,7 @@ export default function PricingSection() {
             <AnimatedPrice value={billingCycle === "monthly" ? 7500 : 6500} />{" "}
             <span className="text-textGray">/ month</span>
           </div>
-          <button className="w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10">
+          <button className="payment_url w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10" data-id={billingCycle === "monthly" ? "growth_monthly" : "growth_quarterly"}>
             Start Now
           </button>
 
@@ -123,7 +123,7 @@ export default function PricingSection() {
             <AnimatedPrice value={billingCycle === "monthly" ? 15000 : 12500} />{" "}
             <span className="text-textGray">/ month</span>
           </div>
-          <button className="w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10">
+          <button className="payment_url w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10" data-id={billingCycle === "monthly" ? "scale_monthly" : "scale_quarterly"}>
             Start Now
           </button>
 

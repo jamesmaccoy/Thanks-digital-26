@@ -23,13 +23,18 @@ function getFirestore() {
       throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON must be valid JSON.");
     }
 
+    const certResolver = (admin.credential && admin.credential.cert) ? admin.credential.cert(credentials) : admin.cert(credentials);
     app = admin.initializeApp({
-      credential: admin.credential.cert(credentials),
+      credential: certResolver,
       projectId: credentials.project_id,
     });
     cachedProjectId = credentials.project_id;
   }
-  return admin.firestore();
+  if (typeof admin.firestore === "function") {
+    return admin.firestore();
+  }
+  const { getFirestore: getFS } = require("firebase-admin/firestore");
+  return getFS();
 }
 
 function getProjectId() {
