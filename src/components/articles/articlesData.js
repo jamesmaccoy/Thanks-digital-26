@@ -14,7 +14,7 @@ export const featuredArticle = {
   readTime: "12 min read",
   image: "/images/articles/james/spaceA.gif",
   description:
-    "The brand that gets you to $1M will strangle you at $100M. Learn how to build flexible brand systems that grow with your business without losing the soul that made them special.",
+    "The brand that gets you to R1M will strangle you at R100M. Learn how to build flexible brand systems that grow with your business without losing the soul that made them special.",
   author: {
     name: "James Mac",
     role: "Creative Director",
@@ -51,28 +51,7 @@ export const featuredArticle = {
 };
 
 export const articles = [
-  {
-    slug: "beyond-minimalism-whats-next-in-web-design",
-    title: "sharing a database object using permissions",
-    category: "Trends",
-    date: "Feb 3, 2026",
-    readTime: "8 min read",
-    image: "/images/articles/james/spaceA.gif",
-    description:
-      "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
-    author: {
-      name: "James Mac",
-      role: "Designer & Software Engineer",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-    body: [
-      {
-        paragraphs: [
-          "In a world where digital threats are ever-present, we provide the strategies and tools to protect your assets, transforming risk into security and ensuring a prosperous future for generations to come.",
-        ],
-      },
-    ],
-  },
+  
   {
     slug: "Short-term-renting-in-South-Africa",
     title: "Short term renting in South Africa",
@@ -203,6 +182,28 @@ export const articles = [
           images:"/images/work/james/capitec.jpg", 
           caption: "Responsive stateful dashboard articulating where the user stands in the policy",
         },
+      },
+    ],
+  },
+  {
+    slug: "beyond-minimalism-whats-next-in-web-design",
+    title: "sharing a database object using permissions 2",
+    category: "Trends",
+    date: "Feb 3, 2026",
+    readTime: "8 min read",
+    image: "/images/articles/james/spaceA.gif",
+    description:
+      "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
+    author: {
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
+    body: [
+      {
+        paragraphs: [
+          "In a world where digital threats are ever-present, we provide the strategies and tools to protect your assets, transforming risk into security and ensuring a prosperous future for generations to come.",
+        ],
       },
     ],
   },

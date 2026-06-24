@@ -14,14 +14,14 @@ function AnimatedPrice({ value, duration = 0.8 }) {
       ease: "power2.out",
       onUpdate: () => {
         if (ref.current) {
-          ref.current.textContent = "$" + Math.round(obj.val).toLocaleString();
+          ref.current.textContent = "R" + Math.round(obj.val).toLocaleString();
         }
       },
     });
     prevValue.current = value;
   }, [value, duration]);
 
-  return <span ref={ref} className="text-4xl lg:text-5xl font-bold">${value.toLocaleString()}</span>;
+  return <span ref={ref} className="text-4xl lg:text-5xl font-bold">R{value.toLocaleString()}</span>;
 }
 
 export default function PricingSection() {
@@ -155,7 +155,7 @@ export default function PricingSection() {
           </p>
           <div className="mb-14">
             <div className="text-textGray text-sm mb-2">Starts at</div>
-            <span className="text-4xl lg:text-5xl font-bold">$10,000</span>
+            <span className="text-4xl lg:text-5xl font-bold">R10,000</span>
           </div>
           <button className="w-full py-4 bg-transparent border border-white text-white font-medium rounded-xl hover:bg-[#222] transition-colors mb-10">
             Get Quote

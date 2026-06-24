@@ -7,7 +7,7 @@ export default function TestimonialsSection() {
       avatar: "/images/avatars/alex-west.webp",
       stats: [
         { value: "40%", label: "Churn rate reduction" },
-        { value: "$2.3M", label: "Annual efficiency savings" },
+        { value: "R2.3M", label: "Annual efficiency savings" },
       ],
     },
     {
