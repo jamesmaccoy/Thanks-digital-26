@@ -15,7 +15,7 @@ export const featuredProjects = [
     desc: "Brand Strategy & Product Design",
     year: "2025",
     image: "/images/work/james/simpleplek.jpg",
-    summary: "Complete brand overhaul and product redesign that increased user engagement by 340% and cut churn in half.",
+    summary: "A trust-first ecosystem designed to protect guest data and property access in South Africa's high-stakes short-term rental market, ensuring user delight under strict compliance.",
   },
   {
     num: "02",
@@ -25,7 +25,7 @@ export const featuredProjects = [
     desc: "Brand Identity & Product Design",
     year: "2024",
     image: "/images/work/james/capitec.jpg",
-    summary: "End-to-end design system and product suite that helped raise a $12M Series A.",
+    summary: "An immutable CRUD dashboard and gated membership portal designed to empower property hosts with secure data handling, automated compliance, and frictionless tenant verification.",
   },
   {
     num: "03",
@@ -212,27 +212,23 @@ export const projectResults = [
 export const workProcess = [
   {
     step: "01",
-    title: "Immerse",
-    description:
-      "We study your product, users, competitors, and market context until we can speak your language fluently.",
+    title: "Immerse & Map",
+    description: "We dive deep into your product architecture, user flows, and regulatory context, mapping out the highest risks and identifying where user autonomy must be defended."
   },
   {
     step: "02",
-    title: "Define",
-    description:
-      "We distill insights into a clear strategy brief — goals, constraints, success metrics, and creative direction.",
+    title: "Define the Path",
+    description: "We distill deep insights into a concrete architectural brief—establishing the strict security constraints, compliance parameters, and 'golden path' user journeys."
   },
   {
     step: "03",
-    title: "Craft",
-    description:
-      "Senior designers build concepts, explore directions, and refine until every detail earns its place.",
+    title: "Craft the Sanctuary",
+    description: "We build high-fidelity interfaces and rock-solid interaction patterns, refining the visual hierarchy until user delight and ironclad data privacy work in flawless lockstep."
   },
   {
     step: "04",
-    title: "Deliver",
-    description:
-      "Production-ready assets, developer specs, and a smooth handoff. No loose ends, no second-guessing.",
+    title: "Deploy & Enforce",
+    description: "Production-ready assets and clean code guidelines integrated with programmatic testing gates in your CI/CD pipeline. No loose ends, no design regression, complete UX integrity."
   },
 ];
 

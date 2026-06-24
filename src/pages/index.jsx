@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import Head from "next/head";
 import HeroSection from "@/components/home/HeroSection";
@@ -14,11 +14,21 @@ import FAQSection from "@/components/home/FAQSection";
 import BlogSection from "@/components/home/BlogSection";
 
 export default function Home() {
+  const [firebaseAppLoaded, setFirebaseAppLoaded] = useState(false);
+  const [firestoreLoaded, setFirestoreLoaded] = useState(false);
   
   useEffect(() => {
     // This code only runs in the browser, safely after jQuery and scripts load
     const initializeScripts = () => {
-      if (typeof window === "undefined" || !window.jQuery) return;
+      console.log("[Antigravity Debug] initializeScripts triggered");
+      if (typeof window === "undefined") return;
+      if (!window.jQuery) {
+        console.log("[Antigravity Debug] jQuery not found, retrying in 100ms");
+        // Retry polling in 100ms
+        setTimeout(initializeScripts, 100);
+        return;
+      }
+      console.log("[Antigravity Debug] jQuery successfully loaded");
       const jQuery = window.jQuery;
       const $ = window.jQuery;
 
@@ -43,7 +53,8 @@ export default function Home() {
       });
 
       // 2. Gallery Toggling
-      $(".custom_point_list .custom_point_click").click(function(){
+      $(document).off("click", ".custom_point_list .custom_point_click").on("click", ".custom_point_list .custom_point_click", function(){
+        console.log("[Antigravity Debug] Gallery toggle clicked:", this);
         $(".custom_point_click").removeClass("click_active");
         $(this).addClass("click_active");
         var custom_click = $(this).attr("data-sl");
@@ -57,9 +68,11 @@ export default function Home() {
       });
 
       // 3. Checkout Link Generation
-      $(".payment_url").click(function (e) {
+      $(document).off("click", ".payment_url").on("click", ".payment_url", function (e) {
+        console.log("[Antigravity Debug] Payment button clicked:", this);
         e.preventDefault();
-        var buttonValue = $(this).data("id"); 
+        var buttonValue = $(this).attr("data-id") || $(this).data("id"); 
+        console.log("[Antigravity Debug] buttonValue parsed:", buttonValue);
         if (buttonValue) {
           jQuery.ajax({
             url: "/api/v1/generate_checkout_link",
@@ -67,6 +80,7 @@ export default function Home() {
             contentType: "application/json",
             data: JSON.stringify({ type: buttonValue }),
             success: function (request) {
+              console.log("[Antigravity Debug] AJAX success:", request);
               if (request?.status === true && request?.data?.redirectUrl) {
                 window.location.href = request.data.redirectUrl;
               } else {
@@ -84,9 +98,7 @@ export default function Home() {
     };
 
     // Run the initialization logic
-    // (Small timeout ensures Next.js scripts are fully executed in the window lifecycle)
-    const timeoutId = setTimeout(initializeScripts, 500);
-    return () => clearTimeout(timeoutId);
+    initializeScripts();
   }, []);
 
   return (
@@ -94,23 +106,29 @@ export default function Home() {
       {/* Load jQuery */}
       <Script 
         src="https://code.jquery.com/jquery-3.6.0.min.js" 
-        strategy="beforeInteractive" 
+        strategy="afterInteractive" 
       />
       {/* Load Firebase Core */}
       <Script 
         src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js" 
-        strategy="beforeInteractive" 
+        strategy="afterInteractive" 
+        onLoad={() => setFirebaseAppLoaded(true)}
       />
       {/* Load Firebase Firestore */}
-      <Script 
-        src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js" 
-        strategy="beforeInteractive" 
-      />
+      {firebaseAppLoaded && (
+        <Script 
+          src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js" 
+          strategy="afterInteractive" 
+          onLoad={() => setFirestoreLoaded(true)}
+        />
+      )}
       {/* Load your local firebase configurations */}
-      <Script 
-        src="/js/firebase.js" 
-        strategy="afterInteractive" 
-      />
+      {firestoreLoaded && (
+        <Script 
+          src="/js/firebase.js" 
+          strategy="afterInteractive" 
+        />
+      )}
 
       <Head>
         <title>Thanks Digital | A digital design partner for startups and brave businesses</title>

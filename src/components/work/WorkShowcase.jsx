@@ -46,8 +46,7 @@ export default function WorkShowcase() {
           </h2>
         </div>
         <p className="text-textGray text-sm md:text-base max-w-sm">
-          Deep dives into our most impactful engagements — the strategy, the
-          craft, and the measurable results.
+        Deep dives into our most impactful engagements—the strategy, the architectural craft, and the measurable results of building digital sanctuaries.
         </p>
       </div>
 

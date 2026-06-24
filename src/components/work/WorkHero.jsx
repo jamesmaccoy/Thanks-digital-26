@@ -57,9 +57,7 @@ export default function WorkHero() {
 
         <div className="work-hero-copy opacity-0 translate-y-8">
           <p className="text-base md:text-lg lg:text-xl text-textGray leading-relaxed max-w-xl">
-            A decade of brand, product, and web design for the most ambitious
-            companies in the world. Every project here shipped on time, on
-            budget, and above expectations.
+          A decade of brand, product, and web design for companies building the future of digital autonomy. Every project here represents a secure sanctuary—engineered with immutable architectural patterns, shipped on time, and built to protect the humans who use it.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link

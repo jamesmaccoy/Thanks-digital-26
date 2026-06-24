@@ -38,11 +38,10 @@ export default function WorkResults() {
           Impact
         </div>
         <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter max-w-3xl">
-          Design that moves the needle.
+        Design that builds sanctuary and scales momentum.
         </h2>
         <p className="mt-4 text-textGray text-base md:text-lg max-w-2xl leading-relaxed">
-          We don&apos;t just ship pixels — we ship outcomes. Here&apos;s how our
-          work translates into real business results.
+        I don't just ship pixels—I ship outcomes. Here is how architecting for digital autonomy and structural security translates into real, uncompromised business results.
         </p>
       </div>
 

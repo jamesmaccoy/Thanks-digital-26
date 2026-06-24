@@ -13,8 +13,7 @@ export default function WorkProcess() {
               How every project unfolds.
             </h2>
             <p className="mt-4 text-textGray text-base md:text-lg leading-relaxed">
-              A proven rhythm that protects quality, respects timelines, and
-              keeps you informed at every step.
+            A proven, immutable rhythm that protects quality, respects boundaries, and keeps your digital architecture secure at every step.
             </p>
           </div>
         </div>

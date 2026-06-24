@@ -4,7 +4,7 @@ let app;
 let cachedProjectId;
 
 function getFirestore() {
-  if (!app) {
+  if (admin.getApps().length === 0) {
     const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
     if (!raw) {
       throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON is not set.");
@@ -29,6 +29,9 @@ function getFirestore() {
       projectId: credentials.project_id,
     });
     cachedProjectId = credentials.project_id;
+  } else {
+    app = admin.getApp();
+    cachedProjectId = app.options.projectId;
   }
   if (typeof admin.firestore === "function") {
     return admin.firestore();
