@@ -57,9 +57,7 @@ export default function PricingHero() {
 
         <div className="price-hero-copy opacity-0 translate-y-8">
           <p className="text-base md:text-lg lg:text-xl text-textGray leading-relaxed max-w-xl">
-            Choose the engagement model that works for your business. Start
-            small and grow with confidence, or jump straight into transformative
-            projects. No hidden fees, no surprises.
+            Choose the engagement model built on absolute operational transparency. I work on a fixed-scope, capped-hour model for a guaranteed outcome, shielding you from runaway agency costs and ensuring my highest-order focus. No hidden vectors, no billable surprises—just predictable execution anchored by high-fidelity architecture.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a

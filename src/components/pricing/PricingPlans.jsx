@@ -15,7 +15,7 @@ function AnimatedPrice({ value, duration = 0.8 }) {
       ease: "power2.out",
       onUpdate: () => {
         if (ref.current) {
-          ref.current.textContent = "$" + Math.round(obj.val).toLocaleString();
+          ref.current.textContent = "R" + Math.round(obj.val).toLocaleString();
         }
       },
     });
@@ -24,13 +24,47 @@ function AnimatedPrice({ value, duration = 0.8 }) {
 
   return (
     <span ref={ref} className="text-4xl lg:text-5xl font-bold">
-      ${value.toLocaleString()}
+      R{value.toLocaleString()}
     </span>
   );
 }
 
 export default function PricingPlans() {
   const [billingCycle, setBillingCycle] = useState("monthly");
+  const [loading, setLoading] = useState(null);
+
+  const handleCheckout = async (planName) => {
+    const isEnterprise = planName.toLowerCase() === "enterprise";
+    if (isEnterprise) {
+      window.location.href = "/contact";
+      return;
+    }
+
+    const packageId = `${planName.toLowerCase()}_${billingCycle}`;
+    setLoading(packageId);
+
+    try {
+      const response = await fetch("/api/v1/generate_checkout_link", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ type: packageId }),
+      });
+      const data = await response.json();
+      if (data?.status === true && data?.data?.redirectUrl) {
+        window.location.href = data.data.redirectUrl;
+      } else {
+        console.error("Checkout failed:", data);
+        alert("Could not start payment. Please try again or contact us.");
+      }
+    } catch (err) {
+      console.error("Checkout error:", err);
+      alert("Could not start payment. Please try again or contact us.");
+    } finally {
+      setLoading(null);
+    }
+  };
 
   return (
     <section
@@ -101,13 +135,15 @@ export default function PricingPlans() {
             </div>
 
             <button
+              onClick={() => handleCheckout(plan.name)}
+              disabled={loading !== null}
               className={`w-full py-4 font-medium rounded-xl transition-colors mb-10 ${
                 plan.ctaStyle === "filled"
                   ? "bg-white text-black hover:bg-gray-200"
                   : "bg-transparent border border-white text-white hover:bg-[#222]"
-              }`}
+              } ${loading !== null ? "opacity-50 cursor-not-allowed" : ""}`}
             >
-              {plan.cta}
+              {loading === `${plan.name.toLowerCase()}_${billingCycle}` ? "Loading..." : plan.cta}
             </button>
 
             <h4 className="text-sm font-semibold mb-4 text-white">

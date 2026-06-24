@@ -26,6 +26,40 @@ function AnimatedPrice({ value, duration = 0.8 }) {
 
 export default function PricingSection() {
   const [billingCycle, setBillingCycle] = useState("monthly");
+  const [prices, setPrices] = useState({
+    growth_monthly: 10000,
+    growth_quarterly: 9000,
+    scale_monthly: 25000,
+    scale_quarterly: 20000,
+  });
+
+  useEffect(() => {
+    const fetchPrices = async () => {
+      const keys = ["growth_monthly", "growth_quarterly", "scale_monthly", "scale_quarterly"];
+      const newPrices = { ...prices };
+      let updated = false;
+      for (const key of keys) {
+        try {
+          const res = await fetch(`/api/v1/get_package?type=${key}`);
+          const data = await res.json();
+          if (data?.status === true && data?.data?.price != null) {
+            let val = parseFloat(data.data.price);
+            if (key.endsWith("_quarterly")) {
+              val = val / 3;
+            }
+            newPrices[key] = val;
+            updated = true;
+          }
+        } catch (e) {
+          console.error(`Failed to fetch price for ${key}:`, e);
+        }
+      }
+      if (updated) {
+        setPrices(newPrices);
+      }
+    };
+    fetchPrices();
+  }, []);
 
   return (
     <section id="pricing" className="py-20 lg:py-32 px-6 md:px-20 border-t border-[#222] 3xl:max-w-[1400px] 3xl:mx-auto">
@@ -49,23 +83,21 @@ export default function PricingSection() {
           <div className="flex gap-2 mb-8 bg-black p-1 rounded-lg w-fit border border-[#333]">
             <button
               onClick={() => setBillingCycle("monthly")}
-              className={`px-4 py-1.5 rounded-md text-sm transition-colors ${
-                billingCycle === "monthly" ? "bg-[#222]" : ""
-              }`}
+              className={`px-4 py-1.5 rounded-md text-sm transition-colors ${billingCycle === "monthly" ? "bg-[#222]" : ""
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingCycle("quarterly")}
-              className={`px-4 py-1.5 text-sm transition-colors ${
-                billingCycle === "quarterly" ? "bg-[#222]" : "text-textGray"
-              }`}
+              className={`px-4 py-1.5 text-sm transition-colors ${billingCycle === "quarterly" ? "bg-[#222]" : "text-textGray"
+                }`}
             >
               Quarterly
             </button>
           </div>
           <div className="mb-8">
-            <AnimatedPrice value={billingCycle === "monthly" ? 7500 : 6500} />{" "}
+            <AnimatedPrice value={billingCycle === "monthly" ? prices.growth_monthly : prices.growth_quarterly} />{" "}
             <span className="text-textGray">/ month</span>
           </div>
           <button className="payment_url w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10" data-id={billingCycle === "monthly" ? "growth_monthly" : "growth_quarterly"}>
@@ -104,23 +136,21 @@ export default function PricingSection() {
           <div className="flex gap-2 mb-8 bg-black p-1 rounded-lg w-fit border border-[#333]">
             <button
               onClick={() => setBillingCycle("monthly")}
-              className={`px-4 py-1.5 rounded-md text-sm transition-colors ${
-                billingCycle === "monthly" ? "bg-[#222]" : ""
-              }`}
+              className={`px-4 py-1.5 rounded-md text-sm transition-colors ${billingCycle === "monthly" ? "bg-[#222]" : ""
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingCycle("quarterly")}
-              className={`px-4 py-1.5 text-sm transition-colors ${
-                billingCycle === "quarterly" ? "bg-[#222]" : "text-textGray"
-              }`}
+              className={`px-4 py-1.5 text-sm transition-colors ${billingCycle === "quarterly" ? "bg-[#222]" : "text-textGray"
+                }`}
             >
               Quarterly
             </button>
           </div>
           <div className="mb-8">
-            <AnimatedPrice value={billingCycle === "monthly" ? 15000 : 12500} />{" "}
+            <AnimatedPrice value={billingCycle === "monthly" ? prices.scale_monthly : prices.scale_quarterly} />{" "}
             <span className="text-textGray">/ month</span>
           </div>
           <button className="payment_url w-full py-4 bg-white text-black font-medium rounded-xl hover:bg-gray-200 transition-colors mb-10" data-id={billingCycle === "monthly" ? "scale_monthly" : "scale_quarterly"}>
@@ -155,7 +185,7 @@ export default function PricingSection() {
           </p>
           <div className="mb-14">
             <div className="text-textGray text-sm mb-2">Starts at</div>
-            <span className="text-4xl lg:text-5xl font-bold">R10,000</span>
+            <span className="text-4xl lg:text-5xl font-bold">R75,000</span>
           </div>
           <button className="w-full py-4 bg-transparent border border-white text-white font-medium rounded-xl hover:bg-[#222] transition-colors mb-10">
             Get Quote
