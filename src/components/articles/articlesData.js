@@ -6,7 +6,7 @@ export const heroStats = [
   { value: "2×", label: "New articles published every month" },
 ];
 
-/// Main Article Data - Fully rewritten based on thanks.digital and jamesmaccoy's firebase.ts
+// Main Article Data - Fully rewritten based on thanks.digital and jamesmaccoy's firebase.ts
 export const featuredArticle = {
   slug: "share-database-object",
   title: "Sharing a database object using permissions",
@@ -30,8 +30,8 @@ export const featuredArticle = {
         "Under this paradigm, the user who initiates the record is designated the Creator. The Creator holds full read and write privileges over the document. Conversely, invited co-travelers or colleagues are treated as Guests. This clear hierarchy isolates tenant data naturally, ensuring that only authorized participants can join the 'chat' and access the shared database record."
       ],
       image: {
-        images: "https://images.pexels.com/photos/463954/pexels-photo-463954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        caption: "A logical metaphor of the group-chat security model",
+        images: "https://www.thanks.digital/images/articles/james/sp_flow.png",
+        caption: "A logical metaphor of the group-chat security and sharing flow schematic",
       },
       code: `
 // Standard data structure for a shared booking object
@@ -111,6 +111,10 @@ export async function addGuestToEstimate(
         "To allow guests to claim their spot on a collaborative stay estimate, a dedicated Next.js App Router endpoint is set up at app/api/estimates/accept-invite/route.ts.",
         "This POST endpoint acts as a secure server-side coordinator. It extracts the estimateId, guestUid, name, and email parameters from incoming client payloads, verifies session logic, and securely invokes the backend transaction library's addGuestToEstimate helper. Keeping invitation acceptances on the server isolates Firestore configurations, shielding sensitive keys while preserving high-fidelity guest profiles."
       ],
+      image: {
+        images: "https://www.thanks.digital/images/articles/james/invite.png",
+        caption: "Collaborative invitations and visual interface layout acceptance mechanics",
+      },
       code: `
 import { NextResponse } from "next/server";
 import { addGuestToEstimate } from "@/lib/firebase";
