@@ -6,12 +6,13 @@ export const heroStats = [
   { value: "2×", label: "New articles published every month" },
 ];
 
+/// Main Article Data - Fully rewritten based on thanks.digital and jamesmaccoy's firebase.ts
 export const featuredArticle = {
   slug: "share-database-object",
   title: "Sharing a database object using permissions",
   category: "Strategy",
   date: "Apr 16, 2026",
-  readTime: "18 min read",
+  readTime: "24 min read",
   image: "/images/articles/james/spaceA.gif",
   description:
     "Think of your database like a group chat: the message represents the data object, and the users represent permissions. Learn how to architect a creator-versus-guest model with a #UserAdmin override, guest preservation, and live estimate sharing in Firebase and Next.js.",
@@ -25,62 +26,42 @@ export const featuredArticle = {
     {
       heading: "The Group Chat Metaphor: Creators vs. Guests",
       paragraphs: [
-        "When handling object-level security, think of a database entry like a group chat. The entry itself—such as an estimate or booking—is the message, and the associated users define the permissions. In this model, we distinctly assign roles to separate the Creator from the Guests.",
-        "The Creator inherently owns full read and write administrative privileges over the object, while Guests are assigned granular, restricted access keys. This ensures data is securely isolated, allowing users to safely interface with shared resources without exposing underlying administrative access."
+        "In modern web applications, sharing secure assets shouldn't require complex, heavy multi-tenant architecture. Think of a database entry—like an estimate or booking—as a message in a group chat, and the associated users as members of that chat.",
+        "Under this paradigm, the user who initiates the record is designated the Creator. The Creator holds full read and write privileges over the document. Conversely, invited co-travelers or colleagues are treated as Guests. This clear hierarchy isolates tenant data naturally, ensuring that only authorized participants can join the 'chat' and access the shared database record."
       ],
       image: {
         images: "https://images.pexels.com/photos/463954/pexels-photo-463954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        caption: "Secure multi-tenant database abstraction",
+        caption: "A logical metaphor of the group-chat security model",
       },
       code: `
-// Generate booking API
-const data = {
-  propertyId: "p1",
-  packageId: "pkg1",
-  customerName: "customer1",
-  customerEmail: "customer1@example.com",
-  fromDate: "2022-01-01",
-  toDate: "2022-01-02",
-  total: 100,
+// Standard data structure for a shared booking object
+const bookingData = {
+  id: "bk_99f2a9c",
+  propertyId: "llandudno-villa-1",
+  packageId: "gold-stay-pkg",
+  customerName: "James Mac",
+  customerEmail: "jmac@thanks.digital",
+  fromDate: "2026-07-10",
+  toDate: "2026-07-17",
+  total: 4500,
   paymentStatus: "pending",
 };
 `
     },
     {
-      heading: "Defining the #UserAdmin Super-User Privilege",
+      heading: "The Role of customerName as Identity Anchor",
       paragraphs: [
-        "In enterprise database systems, there are cases where a tenant or a customer support agent needs administrative oversight across multiple booking chats without being explicitly invited. This is where we define the #UserAdmin role inside app/lib/firebase.ts.",
-        "A user flagged with #UserAdmin bypasses individual guest lists during evaluation, obtaining immediate clearance. This hierarchy keeps the local client permission chains simple while giving backend administrators complete query capabilities."
+        "Inside lib/firebase.ts, when a reservation starts, the initial owner's identity is defined using fields like customerName and customerEmail alongside customerId.",
+        "While flat ID tokens are excellent for indexing queries, customerName acts as the human-readable anchor. It represents the original creator of the stay, which we use on the dashboard to build the administrative 'Owner' badge, personalize communications, and distinguish host privileges from guest behaviors."
       ],
       code: `
-/**
- * Resolves permissions for a single booking object.
- * Evaluates #UserAdmin status first, then checks Creator and Guest lists.
- */
-export async function checkBookingPermission(bookingId: string, userId: string): Promise<boolean> {
-  const db = getFirestore();
-  
-  // 1. Check if user is a designated #UserAdmin super-user
-  const userSnap = await db.collection("users").doc(userId).get();
-  if (userSnap.exists && userSnap.data()?.role === "UserAdmin") {
-    return true; // Bypass evaluation, grand permission
-  }
-
-  // 2. Fetch the target booking object
-  const bookingSnap = await db.collection("bookings").doc(bookingId).get();
-  if (!bookingSnap.exists) return false;
-  const booking = bookingSnap.data();
-
-  // 3. Resolve Creator vs Guest mapping
-  const isCreator = booking.customerId === userId || booking.creatorId === userId;
-  const isGuest = booking.allowedGuests?.includes(userId);
-
-  return isCreator || isGuest;
-}
+// Extracting creator identity on the client-side
+const creatorLabel = booking.customerName; // "James Mac"
+const creatorEmail = booking.customerEmail; // "jmac@thanks.digital"
 `
     },
     {
-      heading: "The Need for addGuestToEstimate",
+      heading: "The Need for addGuestToEstimate: Collaborative Stay Planning",
       paragraphs: [
         "The addGuestToEstimate function addresses a key workflow in your booking system: enabling collaborative stay planning. When a user creates a stay estimate, they need the ability to invite other people (friends, family, co-travelers) to view, review, and contribute to the estimate before payment.",
         "addGuestToEstimate allows you to add guests to an unpaid estimate by storing their UID, name, and email in a guestsDetails dictionary. This supports your 'Booking Sharing Flow' requirement, where multiple people can review the estimated cost, selected package, and stay dates before one person commits to payment.",
@@ -90,6 +71,7 @@ export async function checkBookingPermission(bookingId: string, userId: string):
 /**
  * Adds an invited guest to an existing stay estimate to support collaborative planning.
  * Stores comprehensive user profiles within the guestsDetails dictionary.
+ * Located in: /lib/firebase.ts
  */
 export async function addGuestToEstimate(
   estimateId: string, 
@@ -101,20 +83,66 @@ export async function addGuestToEstimate(
   const estimateRef = db.collection("estimates").doc(estimateId);
   
   await db.runTransaction(async (transaction) => {
-    const sfDoc = await transaction.get(estimateRef);
-    if (!sfDoc.exists) throw "Estimate does not exist!";
+    const docSnap = await transaction.get(estimateRef);
+    if (!docSnap.exists) throw new Error("Estimate does not exist!");
     
-    const guestsDetails = sfDoc.data().guestsDetails || {};
-    const allowedGuests = sfDoc.data().allowedGuests || [];
+    const guestsDetails = docSnap.data().guestsDetails || {};
+    const allowedGuests = docSnap.data().allowedGuests || [];
     
-    // Assign structural profiles rather than flat arrays
-    guestsDetails[guestUid] = { name: guestName, email: guestEmail };
+    // Preserve rich profiles instead of raw ID strings
+    guestsDetails[guestUid] = { 
+      name: guestName, 
+      email: guestEmail,
+      invitedAt: new Date().toISOString()
+    };
+    
     if (!allowedGuests.includes(guestUid)) {
       allowedGuests.push(guestUid);
     }
     
     transaction.update(estimateRef, { guestsDetails, allowedGuests });
   });
+}
+`
+    },
+    {
+      heading: "Handling Safe Invitations: The accept-invite API Route",
+      paragraphs: [
+        "To allow guests to claim their spot on a collaborative stay estimate, a dedicated Next.js App Router endpoint is set up at app/api/estimates/accept-invite/route.ts.",
+        "This POST endpoint acts as a secure server-side coordinator. It extracts the estimateId, guestUid, name, and email parameters from incoming client payloads, verifies session logic, and securely invokes the backend transaction library's addGuestToEstimate helper. Keeping invitation acceptances on the server isolates Firestore configurations, shielding sensitive keys while preserving high-fidelity guest profiles."
+      ],
+      code: `
+import { NextResponse } from "next/server";
+import { addGuestToEstimate } from "@/lib/firebase";
+
+/**
+ * Next.js App Router API Endpoint: accept-invite
+ * Path: app/api/estimates/accept-invite/route.ts
+ */
+export async function POST(request: Request) {
+  try {
+    const { estimateId, guestUid, name, email } = await request.json();
+
+    if (!estimateId || !guestUid || !name || !email) {
+      return NextResponse.json(
+        { error: "Missing required parameters: estimateId, guestUid, name, or email" },
+        { status: 400 }
+      );
+    }
+
+    // Securely invoke our Firebase helper to attach guest details to the estimate
+    await addGuestToEstimate(estimateId, guestUid, name, email);
+
+    return NextResponse.json({ 
+      success: true, 
+      message: \`Successfully accepted invitation to estimate \${estimateId}\` 
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { error: error.message || "Failed to accept invite" },
+      { status: 500 }
+    );
+  }
 }
 `
     },
@@ -128,6 +156,8 @@ export async function addGuestToEstimate(
       code: `
 /**
  * Creates a confirmed booking and automatically preserves previously negotiated guestsDetails.
+ * Transitioning seamlessly from an Estimate state to a Confirmed Booking.
+ * Reference: https://github.com/jamesmaccoy/llandudnoNext/blob/main/lib/firebase.ts
  */
 export async function createBooking(data: {
   propertyId: string;
@@ -159,7 +189,7 @@ export async function createBooking(data: {
 `
     },
     {
-      heading: "Mock Data Representation",
+      heading: "Mock Data Representation (db-mock.json)",
       paragraphs: [
         "In your db-mock.json, this structure is reflected in booking and estimate records that include a guestsDetails object mapping guest UIDs to { name, email } objects.",
         "For example, a booking might contain \"guestsDetails\": { \"jLOrG13Wv1W2gloWW3kMezbD3WJ3\": { \"name\": \"jmaclachlan\", \"email\": \"jmaclachlan@gmail.com\" } }.",
@@ -172,6 +202,8 @@ export async function createBooking(data: {
       "id": "est_9921a",
       "propertyId": "p1",
       "customerId": "usr_james_mac",
+      "customerName": "James Mac",
+      "customerEmail": "jmac@thanks.digital",
       "guestsDetails": {
         "jLOrG13Wv1W2gloWW3kMezbD3WJ3": {
           "name": "jmaclachlan",
@@ -190,47 +222,53 @@ export async function createBooking(data: {
 `
     },
     {
-      heading: "Step 2: Form submissions & Data Contracts",
+      heading: "Defining the #UserAdmin Super-User Privilege",
       paragraphs: [
-        "To process form submissions on the frontend, your underlying application must strictly enforce strongly-typed execution payloads. When initializing a shared object like an estimate, the structural contract must strictly adhere to our data parameters.",
-        "Every submission payload strictly requires fields like propertyId, packageId (which can be null), customerName, customerEmail, customerId, clear fromDate and toDate bounds, a numerical total, and an optional paymentStatus string to manage the state safely."
+        "In enterprise database systems, there are cases where a tenant or a customer support agent needs administrative oversight across multiple booking chats without being explicitly invited. This is where we define the #UserAdmin role inside app/lib/firebase.ts.",
+        "A user flagged with #UserAdmin bypasses individual guest lists during evaluation, obtaining immediate clearance. This hierarchy keeps the local client permission chains simple while giving backend administrators complete query capabilities."
       ],
-    },
-    {
-      heading: "Integrating Frontend Components",
-      paragraphs: [
-        "Add the Shadcn premade component to your site in order to display it on front end. Utilizing modules like Card and Calendar components inside your custom interfaces—such as a CalendarPicker or a SmartEstimateBlock—allows users to intuitively interact with booking scopes and estimate windows while automatically formatting complex timelines into human-readable views."
-      ],
+      code: `
+/**
+ * Resolves permissions for a single booking object.
+ * Evaluates #UserAdmin status first, then checks Creator and Guest lists.
+ */
+export async function checkBookingPermission(bookingId: string, userId: string): Promise<boolean> {
+  const db = getFirestore();
+  
+  // 1. Check if user is a designated #UserAdmin super-user
+  const userSnap = await db.collection("users").doc(userId).get();
+  if (userSnap.exists && userSnap.data()?.role === "UserAdmin") {
+    return true; // Bypass evaluation, grant permission
+  }
+
+  // 2. Fetch the target booking object
+  const bookingSnap = await db.collection("bookings").doc(bookingId).get();
+  if (!bookingSnap.exists) return false;
+  const booking = bookingSnap.data();
+
+  // 3. Resolve Creator vs Guest mapping
+  const isCreator = booking.customerId === userId || booking.creatorId === userId;
+  const isGuest = booking.allowedGuests?.includes(userId);
+
+  return isCreator || isGuest;
+}
+`
     },
     {
       heading: "Project Directory Structure",
       paragraphs: [
         "To keep your API routing layer, frontend components, and security schemas completely isolated, structure your next-gen directory as follows:",
-        "|_ 📁 app\n| |_ 📁 api\n| | |_ 📁 bookings\n| | | |_ 📄 route.ts\n| | |_ 📁 estimates\n| | | |_ 📄 route.ts\n| |_ 📁 components\n| | |_ 📄 CalendarPicker.tsx\n| | |_ 📄 SmartEstimateBlock.tsx\n| | |_ 📁 ui\n| | | |_ 📄 card.tsx\n| | | |_ 📄 calendar.tsx\n|_ 📁 lib\n| |_ 📄 firebase.ts"
-      ],
-      code: `
-// app/lib/firebase.ts configuration
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-};
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-`
+        "|_ 📁 app\n| |_ 📁 api\n| | |_ 📁 bookings\n| | | |_ 📄 route.ts\n| | |_ 📁 estimates\n| | | |_ 📄 route.ts\n| | | |_ 📁 accept-invite\n| | | | |_ 📄 route.ts\n| |_ 📁 components\n| | |_ 📄 CalendarPicker.tsx\n| | |_ 📄 SmartEstimateBlock.tsx\n| | |_ 📁 ui\n| | | |_ 📄 card.tsx\n| | | |_ 📄 calendar.tsx\n|_ 📁 lib\n| |_ 📄 firebase.ts"
+      ]
     }
   ],
   takeaways: [
-    "Differentiate access control explicitly between the document Creator and invited Guests.",
-    "Implement the checkBookingPermission utility to evaluate role-based overrides securely.",
-    "Utilize the guestsDetails dictionary inside addGuestToEstimate to build descriptive collaborative directories.",
-    "Maintain high-fidelity guest lists on payment conversions by integrating complete guest parameter state into createBooking.",
-    "Validate code schemas against mapped JSON structures in local db-mock.json setups.",
-    "Leverage #UserAdmin system privileges inside app/lib/firebase.ts for administration bypass rules."
+    "Differentiate access control explicitly between the document Creator (associated with customerName) and invited Guests.",
+    "Implement checkBookingPermission to securely handle roles and evaluate admin bypasses.",
+    "Utilize addGuestToEstimate to build high-fidelity profiles within guestsDetails for collaborative planning.",
+    "Handle safe guest invitation responses securely using the backend accept-invite API endpoint to validate payloads before modification.",
+    "Preserve guestsDetails when calling createBooking to prevent losing invited co-travelers at conversion.",
+    "Mock user data in db-mock.json to accurately test multi-guest permissions locally."
   ],
 };
 
