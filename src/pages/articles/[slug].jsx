@@ -14,6 +14,23 @@ const fallbackBody = (article) => [
     paragraphs: [
       "generic fallback body",
     ],
+    image: {
+      images: "https://images.pexels.com/photos/463954/pexels-photo-463954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      caption: "Fallback image caption",
+    },
+    code: `
+    // generic fallback code
+    const data = {
+      propertyId: "p1",
+      packageId: "pkg1",
+      customerName: "customer1",
+      customerEmail: "customer1@example.com",
+      fromDate: "2022-01-01",
+      toDate: "2022-01-02",
+      total: 100,
+      paymentStatus: "pending",
+    } ;
+    `
   },
 ];
 
@@ -107,6 +124,13 @@ export default function ArticleDetailPage({ article, relatedArticles }) {
                         </div>
                       )}
                     </div>
+                    {section.code && (
+                      <div key={section.code} className="mb-4">
+                        <pre className="p-4 bg-[#111] rounded-2xl border border-[#252525] overflow-x-auto">
+                          <code>{section.code}</code>
+                        </pre>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

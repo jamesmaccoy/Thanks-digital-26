@@ -7,14 +7,15 @@ export const heroStats = [
 ];
 
 export const featuredArticle = {
-  slug: "building-brands-that-scale",
+  slug: "share-database-object",
   title: "Sharing a database object using permissions",
   category: "Strategy",
   date: "Apr 16, 2026",
-  readTime: "12 min read",
+  readTime: "18 min read",
   image: "/images/articles/james/spaceA.gif",
   description:
-    "The brand that gets you to R1M will strangle you at R100M. Learn how to build flexible brand systems that grow with your business without losing the soul that made them special.",
+    "Think of your database like a group chat: the message represents the data object, and the users represent permissions. Learn how to architect a creator-versus-guest model with a #UserAdmin override, guest preservation, and live estimate sharing in Firebase and Next.js.",
+  githubUrl: "https://github.com/jamesmaccoy/llandudnoNext/blob/main/lib/firebase.ts",
   author: {
     name: "James Mac",
     role: "Creative Director",
@@ -22,36 +23,219 @@ export const featuredArticle = {
   },
   body: [
     {
-      heading: "Scale changes what a brand needs to do.",
+      heading: "The Group Chat Metaphor: Creators vs. Guests",
       paragraphs: [
-        "Early brands often win because they are intimate, opinionated, and easy to recognise. As the business grows, the same brand has to support more channels, teams, product lines, markets, and customer expectations without becoming generic.",
-        "The goal is not to make a brand bigger for the sake of looking bigger. The goal is to create a system that protects what made the company magnetic while giving every team enough structure to move faster.",
+        "When handling object-level security, think of a database entry like a group chat. The entry itself—such as an estimate or booking—is the message, and the associated users define the permissions. In this model, we distinctly assign roles to separate the Creator from the Guests.",
+        "The Creator inherently owns full read and write administrative privileges over the object, while Guests are assigned granular, restricted access keys. This ensures data is securely isolated, allowing users to safely interface with shared resources without exposing underlying administrative access."
+      ],
+      image: {
+        images: "https://images.pexels.com/photos/463954/pexels-photo-463954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        caption: "Secure multi-tenant database abstraction",
+      },
+      code: `
+// Generate booking API
+const data = {
+  propertyId: "p1",
+  packageId: "pkg1",
+  customerName: "customer1",
+  customerEmail: "customer1@example.com",
+  fromDate: "2022-01-01",
+  toDate: "2022-01-02",
+  total: 100,
+  paymentStatus: "pending",
+};
+`
+    },
+    {
+      heading: "Defining the #UserAdmin Super-User Privilege",
+      paragraphs: [
+        "In enterprise database systems, there are cases where a tenant or a customer support agent needs administrative oversight across multiple booking chats without being explicitly invited. This is where we define the #UserAdmin role inside app/lib/firebase.ts.",
+        "A user flagged with #UserAdmin bypasses individual guest lists during evaluation, obtaining immediate clearance. This hierarchy keeps the local client permission chains simple while giving backend administrators complete query capabilities."
+      ],
+      code: `
+/**
+ * Resolves permissions for a single booking object.
+ * Evaluates #UserAdmin status first, then checks Creator and Guest lists.
+ */
+export async function checkBookingPermission(bookingId: string, userId: string): Promise<boolean> {
+  const db = getFirestore();
+  
+  // 1. Check if user is a designated #UserAdmin super-user
+  const userSnap = await db.collection("users").doc(userId).get();
+  if (userSnap.exists && userSnap.data()?.role === "UserAdmin") {
+    return true; // Bypass evaluation, grand permission
+  }
+
+  // 2. Fetch the target booking object
+  const bookingSnap = await db.collection("bookings").doc(bookingId).get();
+  if (!bookingSnap.exists) return false;
+  const booking = bookingSnap.data();
+
+  // 3. Resolve Creator vs Guest mapping
+  const isCreator = booking.customerId === userId || booking.creatorId === userId;
+  const isGuest = booking.allowedGuests?.includes(userId);
+
+  return isCreator || isGuest;
+}
+`
+    },
+    {
+      heading: "The Need for addGuestToEstimate",
+      paragraphs: [
+        "The addGuestToEstimate function addresses a key workflow in your booking system: enabling collaborative stay planning. When a user creates a stay estimate, they need the ability to invite other people (friends, family, co-travelers) to view, review, and contribute to the estimate before payment.",
+        "addGuestToEstimate allows you to add guests to an unpaid estimate by storing their UID, name, and email in a guestsDetails dictionary. This supports your 'Booking Sharing Flow' requirement, where multiple people can review the estimated cost, selected package, and stay dates before one person commits to payment.",
+        "The function preserves guest details (not just raw UIDs) so the dashboard can display readable guest information like 'robgt2 (robgt2@icloud.com)' instead of a cryptic Firebase identifier."
+      ],
+      code: `
+/**
+ * Adds an invited guest to an existing stay estimate to support collaborative planning.
+ * Stores comprehensive user profiles within the guestsDetails dictionary.
+ */
+export async function addGuestToEstimate(
+  estimateId: string, 
+  guestUid: string, 
+  guestName: string, 
+  guestEmail: string
+): Promise<void> {
+  const db = getFirestore();
+  const estimateRef = db.collection("estimates").doc(estimateId);
+  
+  await db.runTransaction(async (transaction) => {
+    const sfDoc = await transaction.get(estimateRef);
+    if (!sfDoc.exists) throw "Estimate does not exist!";
+    
+    const guestsDetails = sfDoc.data().guestsDetails || {};
+    const allowedGuests = sfDoc.data().allowedGuests || [];
+    
+    // Assign structural profiles rather than flat arrays
+    guestsDetails[guestUid] = { name: guestName, email: guestEmail };
+    if (!allowedGuests.includes(guestUid)) {
+      allowedGuests.push(guestUid);
+    }
+    
+    transaction.update(estimateRef, { guestsDetails, allowedGuests });
+  });
+}
+`
+    },
+    {
+      heading: "The Need for createBooking with Guest Preservation",
+      paragraphs: [
+        "createBooking must accept and initialize a guestsDetails parameter to ensure that when a paid estimate is converted into a confirmed booking, all invited guests are carried over automatically.",
+        "This is critical for your paid-to-booking conversion flow: after payment completes (via Yoco webhook or the confirm endpoint), the system creates a booking and needs to preserve the entire guest list and their contact details.",
+        "Without this, guests who were invited to the estimate would be lost when the booking was created, breaking the continuous sharing experience. By passing guestsDetails: estimate.guestsDetails || {} during booking creation, you maintain the full guest roster and allow additional guests to be invited post-payment via addGuestToBooking."
+      ],
+      code: `
+/**
+ * Creates a confirmed booking and automatically preserves previously negotiated guestsDetails.
+ */
+export async function createBooking(data: {
+  propertyId: string;
+  packageId: string | null;
+  customerName: string;
+  customerEmail: string;
+  fromDate: string;
+  toDate: string;
+  total: number;
+  paymentStatus?: string;
+  guestsDetails?: Record<string, { name: string; email: string }>;
+  allowedGuests?: string[];
+}): Promise<any> {
+  const db = getFirestore();
+  const id = \`bk_\${Math.random().toString(36).substring(2, 11)}\`;
+  
+  const bookingRecord = {
+    id,
+    paymentStatus: data.paymentStatus || "pending",
+    token: Math.random().toString(36).substring(2, 15),
+    guestsDetails: data.guestsDetails || {}, // Automated preservation payload
+    allowedGuests: data.allowedGuests || [],
+    ...data,
+  };
+
+  await db.collection("bookings").doc(id).set(bookingRecord);
+  return bookingRecord;
+}
+`
+    },
+    {
+      heading: "Mock Data Representation",
+      paragraphs: [
+        "In your db-mock.json, this structure is reflected in booking and estimate records that include a guestsDetails object mapping guest UIDs to { name, email } objects.",
+        "For example, a booking might contain \"guestsDetails\": { \"jLOrG13Wv1W2gloWW3kMezbD3WJ3\": { \"name\": \"jmaclachlan\", \"email\": \"jmaclachlan@gmail.com\" } }.",
+        "This mock data enables local testing and demonstrates how the system will track and display multiple people invited to a single stay, supporting your vision of a collaborative, shareable booking experience where any invited guest can view the details and continue inviting others."
+      ],
+      code: `
+{
+  "estimates": [
+    {
+      "id": "est_9921a",
+      "propertyId": "p1",
+      "customerId": "usr_james_mac",
+      "guestsDetails": {
+        "jLOrG13Wv1W2gloWW3kMezbD3WJ3": {
+          "name": "jmaclachlan",
+          "email": "jmaclachlan@gmail.com"
+        },
+        "robgt2": {
+          "name": "robgt2",
+          "email": "robgt2@icloud.com"
+        }
+      },
+      "allowedGuests": ["jLOrG13Wv1W2gloWW3kMezbD3WJ3", "robgt2"],
+      "paymentStatus": "pending"
+    }
+  ]
+}
+`
+    },
+    {
+      heading: "Step 2: Form submissions & Data Contracts",
+      paragraphs: [
+        "To process form submissions on the frontend, your underlying application must strictly enforce strongly-typed execution payloads. When initializing a shared object like an estimate, the structural contract must strictly adhere to our data parameters.",
+        "Every submission payload strictly requires fields like propertyId, packageId (which can be null), customerName, customerEmail, customerId, clear fromDate and toDate bounds, a numerical total, and an optional paymentStatus string to manage the state safely."
       ],
     },
     {
-      heading: "A scalable brand is a decision-making system.",
+      heading: "Integrating Frontend Components",
       paragraphs: [
-        "Logos, type, colours, and templates matter, but they are only the visible layer. The deeper value is a shared language for making choices: what we say yes to, what we avoid, how we show up, and how we stay consistent when the team is no longer in the same room.",
-        "When that system is clear, teams stop reinventing the brand every week. Marketing becomes sharper, product moments feel connected, and leadership can expand the story without losing credibility.",
+        "Add the Shadcn premade component to your site in order to display it on front end. Utilizing modules like Card and Calendar components inside your custom interfaces—such as a CalendarPicker or a SmartEstimateBlock—allows users to intuitively interact with booking scopes and estimate windows while automatically formatting complex timelines into human-readable views."
       ],
     },
     {
-      heading: "Build flexibility into the rules.",
+      heading: "Project Directory Structure",
       paragraphs: [
-        "Rigid guidelines break under real growth. Flexible systems define ranges, principles, and examples so the brand can adapt across campaigns, landing pages, pitch decks, social content, and product surfaces.",
-        "The best brand systems give teams confidence. They reduce ambiguity without removing taste, creativity, or the small details that make the brand feel alive.",
+        "To keep your API routing layer, frontend components, and security schemas completely isolated, structure your next-gen directory as follows:",
+        "|_ 📁 app\n| |_ 📁 api\n| | |_ 📁 bookings\n| | | |_ 📄 route.ts\n| | |_ 📁 estimates\n| | | |_ 📄 route.ts\n| |_ 📁 components\n| | |_ 📄 CalendarPicker.tsx\n| | |_ 📄 SmartEstimateBlock.tsx\n| | |_ 📁 ui\n| | | |_ 📄 card.tsx\n| | | |_ 📄 calendar.tsx\n|_ 📁 lib\n| |_ 📄 firebase.ts"
       ],
-    },
+      code: `
+// app/lib/firebase.ts configuration
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+`
+    }
   ],
   takeaways: [
-    "Define the brand as principles before assets.",
-    "Create repeatable patterns for every high-frequency touchpoint.",
-    "Document what should never change as the company grows.",
+    "Differentiate access control explicitly between the document Creator and invited Guests.",
+    "Implement the checkBookingPermission utility to evaluate role-based overrides securely.",
+    "Utilize the guestsDetails dictionary inside addGuestToEstimate to build descriptive collaborative directories.",
+    "Maintain high-fidelity guest lists on payment conversions by integrating complete guest parameter state into createBooking.",
+    "Validate code schemas against mapped JSON structures in local db-mock.json setups.",
+    "Leverage #UserAdmin system privileges inside app/lib/firebase.ts for administration bypass rules."
   ],
 };
 
 export const articles = [
-  
+
   {
     slug: "Short-term-renting-in-South-Africa",
     title: "Short term renting in South Africa",
@@ -79,7 +263,7 @@ export const articles = [
           "Membership allows access to view sensitive information, such as Lockbox code, or WIFI passwords. The details of the Plek are extended to guest that have accepted the invite to the booking.",
         ],
         image: {
-          images:"/images/work/james/PAGE 1.jpg", 
+          images: "/images/work/james/PAGE 1.jpg",
           caption: "Off plan package Ad, funding a new build, combined with a repeat payment serves as a home loan monthly premium X period remaining seen on the SimplePlek dashboard",
         },
       },
@@ -143,8 +327,8 @@ export const articles = [
           "Empathy Mapping with FigJam: We kick off the process with a collaborative empathy mapping session. Using a tool like FigJam, we get shareholders and stakeholders in a room to identify key pain points. What are their frustrations? What do they truly need to accomplish? We capture these insights to form a clear, human-centered foundation for our design.",
           "The &quot;golden path&quot; — the blueprint for the entire project.",
         ],
-        image:{
-          images:"/images/work/james/capitecapp.png", 
+        image: {
+          images: "/images/work/james/capitecapp.png",
           caption: "The Capitec app",
         },
       },
@@ -156,7 +340,7 @@ export const articles = [
           "This isn't about catching bugs; it's about enforcing design consistency. By making this a mandatory part of our CI/CD pipeline, we can confidently assume a better user experience with every new release. We get automated reports confirming the work is well-executed, eliminating manual checks and ensuring that our product remains true to the original design vision.",
         ],
         image: {
-          images:"/images/work/james/capitec_questions.jpg", 
+          images: "/images/work/james/capitec_questions.jpg",
           caption: "Pre qualifying questions template to deduce the cover amount",
         },
       },
@@ -169,7 +353,7 @@ export const articles = [
           "By using these methods, we're not just improving a coded framework; we're fundamentally changing our approach to product development. We're embracing the idea that some patterns are universal and that the most effective path forward is often to leverage, not reinvent, what works.",
         ],
         image: {
-          images:"/images/work/james/capitec_flow.jpg", 
+          images: "/images/work/james/capitec_flow.jpg",
           caption: "Maintaining the Policy object using a design framework to communicate the state of the policy",
         },
       },
@@ -179,7 +363,7 @@ export const articles = [
           "",
         ],
         image: {
-          images:"/images/work/james/capitec.jpg", 
+          images: "/images/work/james/capitec.jpg",
           caption: "Responsive stateful dashboard articulating where the user stands in the policy",
         },
       },
