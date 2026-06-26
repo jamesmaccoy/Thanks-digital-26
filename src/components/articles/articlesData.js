@@ -6,13 +6,13 @@ export const heroStats = [
   { value: "2×", label: "New articles published every month" },
 ];
 
-// Main Article Data - Fully rewritten based on thanks.digital and jamesmaccoy's firebase.ts
+// Main Article Data - Fully updated with the complete paid-to-booking conversion, sharing flows, and pricing corrections
 export const featuredArticle = {
   slug: "share-database-object",
   title: "Sharing a database object using permissions",
   category: "Strategy",
   date: "Apr 16, 2026",
-  readTime: "24 min read",
+  readTime: "28 min read",
   image: "/images/articles/james/spaceA.gif",
   description:
     "Think of your database like a group chat: the message represents the data object, and the users represent permissions. Learn how to architect a creator-versus-guest model with a #UserAdmin override, guest preservation, and live estimate sharing in Firebase and Next.js.",
@@ -193,6 +193,34 @@ export async function createBooking(data: {
 `
     },
     {
+      heading: "Correcting the Stay Package Calculations (Math Model)",
+      paragraphs: [
+        "A key requirement in collaborative stays is ensuring pricing is absolute and robust. The platform introduces a default 'No Package' option where calculations are bound strictly to nightly durations (nights multiplied by base nightly pricing).",
+        "If a specific package is selected, flat pricing is merged into duration variables, and a multiplier is applied to output the corrected final checkout fee: finalTotal = (baseCost + packagePrice) * multiplier.",
+        "This formula correctly scales staying rates for bundled premium inclusions without breaking standard multi-guest calculations."
+      ],
+      code: `
+/**
+ * Resolves standard stay & package calculation logic safely on the server or checkout page.
+ */
+export function calculateStayPrice(
+  nightsCount: number,
+  basePricePerNight: number,
+  selectedPackage: { price: number; multiplier: number } | null
+): number {
+  const baseCost = basePricePerNight * nightsCount;
+  
+  if (!selectedPackage) {
+    return baseCost; // "No Package" selected by default
+  }
+  
+  // Package math model: finalTotal = (baseCost + packagePrice) * multiplier
+  const finalTotal = (baseCost + selectedPackage.price) * selectedPackage.multiplier;
+  return Math.round(finalTotal);
+}
+`
+    },
+    {
       heading: "Mock Data Representation (db-mock.json)",
       paragraphs: [
         "In your db-mock.json, this structure is reflected in booking and estimate records that include a guestsDetails object mapping guest UIDs to { name, email } objects.",
@@ -272,6 +300,7 @@ export async function checkBookingPermission(bookingId: string, userId: string):
     "Utilize addGuestToEstimate to build high-fidelity profiles within guestsDetails for collaborative planning.",
     "Handle safe guest invitation responses securely using the backend accept-invite API endpoint to validate payloads before modification.",
     "Preserve guestsDetails when calling createBooking to prevent losing invited co-travelers at conversion.",
+    "Correct stayed packages calculation using the: finalTotal = (baseCost + packagePrice) * multiplier format.",
     "Mock user data in db-mock.json to accurately test multi-guest permissions locally."
   ],
 };
