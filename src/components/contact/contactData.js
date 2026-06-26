@@ -68,9 +68,9 @@ export const teamContacts = [
 ];
 
 export const socials = [
-  { name: "X (Twitter)", handle: "@optima", href: "#", followers: "24K" },
-  { name: "Instagram", handle: "@optima.agency", href: "#", followers: "18K" },
-  { name: "LinkedIn", handle: "OPTIMA Agency", href: "#", followers: "12K" },
+  { name: "X (Twitter)", handle: "@footune", href: "#", followers: "24K" },
+  { name: "Instagram", handle: "@thankyou.digital", href: "#", followers: "18K" },
+  { name: "LinkedIn", handle: "james-mac-91b3616 Agency", href: "https://www.linkedin.com/in/james-mac-91b3616/", followers: "12K" },
   { name: "Dribbble", handle: "optima", href: "#", followers: "8K" },
   { name: "Behance", handle: "OPTIMA", href: "#", followers: "6K" },
 ];

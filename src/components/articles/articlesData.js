@@ -316,7 +316,7 @@ export const articles = [
       {
         heading: "The &quot;Nothing New Under the Sun&quot; Approach to Modern UX",
         paragraphs: [
-          "Ecclesiastes 1:9 tells us, There is &quot;nothing new under the sun.&quot; While King Solomon wasn't talking about software, this timeless wisdom is a powerful guide for product development today. We spend countless hours reinventing the wheel, fighting against legacy systems, and building complex solutions for problems that have, in many ways, already been solved.",
+          "Ecclesiastes 1:9 tells us, There is &quot;nothing new under the sun. While King Solomon wasn't talking about software, this timeless wisdom is a powerful guide for product development today. We spend countless hours reinventing the wheel, fighting against legacy systems, and building complex solutions for problems that have, in many ways, already been solved.",
           "What if we stopped? What if we embraced this truth and built a system designed to leverage proven patterns instead of starting from scratch?",
         ],
       },
@@ -345,7 +345,7 @@ export const articles = [
         },
       },
       {
-        heading: "The &quot;Solomon's Patterns&quot; Framework",
+        heading: "The Solomon's Patterns Framework",
         paragraphs: [
           "This entire process can be packaged into a valuable service. Imagine a platform, accessible behind a paywall, that provides this exact design framework.",
           "The Dashboard: After payment, users get access to a dashboard filled with custom, drag-and-drop components. These aren't just pretty pictures; they are pre-validated, modular building blocks of a great user experience.",
