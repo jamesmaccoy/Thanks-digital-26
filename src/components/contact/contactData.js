@@ -50,7 +50,7 @@ export const offices = [
 
 export const teamContacts = [
   {
-    name: "James Ma c",
+    name: "James Mac",
     role: "Designer & Software Engineer",
     desc: "Your first point of contact. James handles design, development, and making sure everything runs smoothly.",
     avatar: "/images/avatars/james-mac.jpg",
@@ -68,9 +68,9 @@ export const teamContacts = [
 ];
 
 export const socials = [
-  { name: "X (Twitter)", handle: "@footune", href: "#", followers: "24K" },
-  { name: "Instagram", handle: "@thankyou.digital", href: "#", followers: "18K" },
-  { name: "LinkedIn", handle: "james-mac-91b3616 Agency", href: "https://www.linkedin.com/in/james-mac-91b3616/", followers: "12K" },
+  { name: "X (Twitter)", handle: "@footune", href: "https://x.com/footune", followers: "24K" },
+  { name: "Instagram", handle: "@thankyou.digital", href: "https://www.instagram.com/thankyou.digital/", followers: "18K" },
+  { name: "LinkedIn", handle: "james-mac-91b3616", href: "https://www.linkedin.com/in/james-mac-91b3616/", followers: "12K" },
   { name: "Dribbble", handle: "optima", href: "#", followers: "8K" },
   { name: "Behance", handle: "OPTIMA", href: "#", followers: "6K" },
 ];
