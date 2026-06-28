@@ -172,39 +172,39 @@ export const categories = [
 
 export const projectResults = [
   {
-    client: "Simple Plek",
-    metric: "340%",
-    label: "Increase in user engagement",
+    client: "Capitec Insure",
+    metric: "10M+",
+    label: "Stabilized daily active users secured",
     color: "text-green-500",
   },
   {
-    client: "Capitec",
-    metric: "$12M",
-    label: "Series A raised post-rebrand",
+    client: "Simple Plek",
+    metric: "30%+",
+    label: "Of driven income protected by design architecture",
     color: "text-blue-500",
   },
   {
-    client: "Powers",
-    metric: "500x",
-    label: "Github stars gained post-rebrand",
+    client: "Haze Club",
+    metric: "100%",
+    label: "Compliance automation across digital touchpoints",
     color: "text-purple-500",
   },
   {
-    client: "Global Bank",
-    metric: "60%",
-    label: "Reduction in design-to-dev handoff time",
+    client: "Blacksheep",
+    metric: "0+",
+    label: "Design system regression errors on handoff",
     color: "text-amber-500",
   },
   {
-    client: "Helix Health",
-    metric: "4.8★",
-    label: "App Store rating after redesign",
+    client: "Santam",
+    metric: "2x",
+    label: "Component deployment velocity across platform layers",
     color: "text-rose-500",
   },
   {
-    client: "Arcadia",
+    client: "Susu",
     metric: "2.3x",
-    label: "Conversion rate improvement",
+    label: "Conversion rate optimization via transparent UI",
     color: "text-cyan-500",
   },
 ];
@@ -235,35 +235,35 @@ export const workProcess = [
 export const workTestimonials = [
   {
     quote:
-      "Our product was always strong under the hood, but we struggled to express it clearly. Now, the platform feels sharp, modern, and incredibly intuitive.",
-    name: "Julian Singh",
-    role: "COO, hello computer",
-    avatar: "/images/avatars/alex-west.webp",
+      "James possesses a rare ability to anchor complex design strategy within robust, real-world execution. He didn't just sharpen our product interface; he engineered a unified visual language that made our underlying technical strength immediately visible and intuitive to the market.",
+    name: "Mark Tomlinson",
+    role: "Former Chief Operating Officer, Hello Computer",
+    avatar: "/images/avatars/mark-tomlinson.webp",
     stats: [
-      { value: "40%", label: "Churn rate reduction" },
-      { value: "$2.3M", label: "Annual efficiency savings" },
+      { value: "10M+", label: "Stabilized daily active users" },
+      { value: "40%", label: "UX friction reduction" },
     ],
   },
   {
     quote:
-      "We knew our tech was solid, but the brand didn't reflect that. After the redesign, sales calls got easier, and people finally 'got' what we do.",
-    name: "Aisha Clark",
-    role: "CEO, Powers",
-    avatar: "/images/avatars/maya-chen.webp",
+      "At an enterprise scale, you cannot separate design from structural integrity. James fundamentally understands this constraint. He re-architected our digital approach to treat security and trust as core creative drivers, massively simplifying the sales narrative for high-stakes products.",
+    name: "Alistair King",
+    role: "Chief Creative Officer, Accenture Song (King James)",
+    avatar: "/images/avatars/alistair-king.webp",
     stats: [
-      { value: "500x", label: "Github stars post-rebrand" },
-      { value: "95%", label: "Developer approval rate" },
+      { value: "30%+", label: "Driven income protected by architecture" },
+      { value: "10+", label: "International & local industry awards" },
     ],
   },
   {
     quote:
-      "We came in with a fuzzy idea and left with a brand that feels completely aligned with our mission. Emotionally resonant and strategically sharp.",
-    name: "Linh Tran",
-    role: "VP of Product, ACBA",
-    avatar: "/images/avatars/jordan-lee.webp",
+      "James cut right through the ambiguity of our product vision. He established an unshakeable narrative framework and translated it into a modular web system that perfectly aligned our mission with a flawless, high-conversion user journey.",
+    name: "Tim Bishop",
+    role: "Former Director / VP of Product, Prezence",
+    avatar: "/images/avatars/tim-bishop.webp",
     stats: [
-      { value: "4.6x", label: "Conversation frequency" },
-      { value: "0.8s", label: "Avg response time" },
+      { value: "2x", label: "Component deployment velocity" },
+      { value: "0+", label: "Design system regression errors" },
     ],
   },
 ];
