@@ -70,8 +70,8 @@ export const allProjects = [
     desc: "Brand Identity & Product Design",
     year: "2024",
     image: "/images/work/hero/KV-1.jpg",
-    summary: "Architecting a strategic, trust-first brand framework for enterprise-scale insurance, translating complex regulatory compliance into clear, authoritative value props that dismantle surveillance and security anxieties.",
-    quote: "Enterprise scale requires an unshakeable narrative foundation—positioning ironclad data safety as the ultimate driver of user autonomy.",
+    summary: "A flawless, high-conversion mobile experience that turns enterprise-scale compliance into an intuitive user journey, using secure CRUD architectures and the 'build once, deploy many times' philosophy to drive friction-free financial momentum.",
+    quote: "We proved that massive conversion drops can be solved without dark patterns—when you respect a user's intent and optimize the interface for absolute clarity, the metrics take care of themselves.",
   },
   {
     num: "04",
