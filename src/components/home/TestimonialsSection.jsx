@@ -1,33 +1,36 @@
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "Our product was always strong under the hood, but we struggled to express it clearly. Now, the platform feels sharp, modern, and incredibly intuitive—it's made onboarding so much smoother.",
-      name: "Julian Singh",
-      role: "COO, Boltshift",
-      avatar: "/images/avatars/alex-west.webp",
+      quote:
+        "James possesses a rare ability to anchor complex design strategy within robust, real-world execution. He didn't just sharpen our product interface; he engineered a unified visual language that made our underlying technical strength immediately visible and intuitive to the market.",
+      name: "Mark Tomlinson",
+      role: "Former Chief Operating Officer, Hello Computer",
+      avatar: "/images/avatars/mark-tomlinson.webp",
       stats: [
-        { value: "40%", label: "Churn rate reduction" },
-        { value: "R2.3M", label: "Annual efficiency savings" },
+        { value: "10M+", label: "Stabilized daily active users" },
+        { value: "40%", label: "UX friction reduction" },
       ],
     },
     {
-      quote: "We knew our tech was solid, but the brand didn't reflect that. After the redesign, everything just clicked—sales calls got easier, and people finally 'got' what we do.",
-      name: "Aisha Clark",
-      role: "CEO, Powers",
-      avatar: "/images/avatars/maya-chen.webp",
+      quote:
+        "At an enterprise scale, you cannot separate design from structural integrity. James fundamentally understands this constraint. He re-architected our digital approach to treat security and trust as core creative drivers, massively simplifying the sales narrative for high-stakes products.",
+      name: "Alistair King",
+      role: "Chief Creative Officer, Accenture Song (King James)",
+      avatar: "https://media.licdn.com/dms/image/v2/D4E03AQFhfLl4FnjKsA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1701872744412?e=1784160000&v=beta&t=jKVcI0Fub_EIiFVQVe95APB99uvbF6cmVn0TJp7RJnU",
       stats: [
-        { value: "500x", label: "Github stars gained post-rebrand" },
-        { value: "95%", label: "Developer-to-CTO approval rate" },
+        { value: "30%+", label: "Driven income protected by architecture" },
+        { value: "10+", label: "International & local industry awards" },
       ],
     },
     {
-      quote: "We came in with a fuzzy idea and left with a brand that feels completely aligned with our mission. The team really understood our product and turned that into something emotionally resonant.",
-      name: "Linh Tran",
-      role: "VP of Product, ACBA",
-      avatar: "/images/avatars/jordan-lee.webp",
+      quote:
+        "James cut right through the ambiguity of our product vision. He established an unshakeable narrative framework and translated it into a modular web system that perfectly aligned our mission with a flawless, high-conversion user journey.",
+      name: "Tim Bishop",
+      role: "Former Director / VP of Product, Prezence",
+      avatar: "/images/avatars/tim-bishop.webp",
       stats: [
-        { value: "4.6x", label: "Conversation frequency" },
-        { value: "0.8 sec", label: "Avg response time" },
+        { value: "2x", label: "Component deployment velocity" },
+        { value: "0+", label: "Design system regression errors" },
       ],
     },
   ];
