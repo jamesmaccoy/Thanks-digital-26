@@ -237,7 +237,7 @@ export const workTestimonials = [
     quote:
       "Our product was always strong under the hood, but we struggled to express it clearly. Now, the platform feels sharp, modern, and incredibly intuitive.",
     name: "Julian Singh",
-    role: "COO, Boltshift",
+    role: "COO, hello computer",
     avatar: "/images/avatars/alex-west.webp",
     stats: [
       { value: "40%", label: "Churn rate reduction" },

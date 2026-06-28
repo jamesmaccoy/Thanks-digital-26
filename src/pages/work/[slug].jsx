@@ -3,11 +3,11 @@ import Link from "next/link";
 import { allProjects } from "@/components/work/workData";
 
 const detailByCategory = {
- "Brand Strategy": {
-    challenge: "The short-term rental market suffers from a deep crisis of institutional trust, surveillance anxieties, and systemic fragmentation. The existing brand identity was too generic to carry the heavy compliance and security reassurances required by modern users.",
-    approach: "We architected a transparent brand strategy that anchors Simple Plek as a digital sanctuary. We implemented modular communication structures and sharp visual markers that signal ironclad data privacy and uncompromising user protection across all digital touchpoints.",
-    outcome: "The brand evolved from a basic booking tool into an authoritative trust network, establishing deep credibility and user alignment before a single interaction takes place."
-  },
+"Brand Strategy": {
+  challenge: "Enterprise-scale financial products face massive friction when rolling out new offerings like insurance. Navigating legacy banking expectations, stringent compliance rules, and consumer skepticism requires a precise narrative foundation that translates complex regulatory mandates into transparent, instant user trust.",
+  approach: "We architected a unified brand and positioning system centered around the 'build once, deploy many times' philosophy. By establishing a clear strategic messaging hierarchy, transparent compliance indicators, and an authoritative visual direction, we ensured the product's value and ironclad structural safety were immediately recognizable across every campaign, dashboard, and touchpoint.",
+  outcome: "The insurance offering was transformed from an abstract financial product into a clear, trusted sanctuary—empowering internal sales teams to eliminate friction and allowing users to engage with absolute confidence before their first transaction."
+},
   "Brand Identity": {
     challenge: "The brand possessed massive institutional momentum, but explaining a complex, highly regulated insurance product in a saturated market led to scattered product narratives and friction for sales teams.",
     approach: "We rebuilt the positioning system around transparency, defining clear category language, data privacy proof points, and a unified narrative hierarchy designed to establish immediate customer trust.",
