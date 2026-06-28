@@ -5,7 +5,7 @@ export default function TestimonialsSection() {
         "James possesses a rare ability to anchor complex design strategy within robust, real-world execution. He didn't just sharpen our product interface; he engineered a unified visual language that made our underlying technical strength immediately visible and intuitive to the market.",
       name: "Mark Tomlinson",
       role: "Former Chief Operating Officer, Hello Computer",
-      avatar: "/images/avatars/mark-tomlinson.webp",
+      avatar: "https://media.licdn.com/dms/image/v2/C5603AQEE3kHRmioPFg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1549273472397?e=1784160000&v=beta&t=AkPNv73YtPHXw_kh-Wng1pIb3bUp72BqtanjeRh4jOs",
       stats: [
         { value: "10M+", label: "Stabilized daily active users" },
         { value: "40%", label: "UX friction reduction" },
@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
         "James cut right through the ambiguity of our product vision. He established an unshakeable narrative framework and translated it into a modular web system that perfectly aligned our mission with a flawless, high-conversion user journey.",
       name: "Tim Bishop",
       role: "Former Director / VP of Product, Prezence",
-      avatar: "/images/avatars/tim-bishop.webp",
+      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQHRlRlpSGRZ-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730284667464?e=1784160000&v=beta&t=44UiaHxzNGDGQFg3m74huhGIvCvAqcPHlymSB9Uae7I",
       stats: [
         { value: "2x", label: "Component deployment velocity" },
         { value: "0+", label: "Design system regression errors" },
