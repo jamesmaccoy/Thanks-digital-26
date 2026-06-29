@@ -290,7 +290,7 @@ export async function checkBookingPermission(bookingId: string, userId: string):
       heading: "Project Directory Structure",
       paragraphs: [
         "To keep your API routing layer, frontend components, and security schemas completely isolated, structure your next-gen directory as follows:",
-        "|_ 📁 app\n| |_ 📁 api\n| | |_ 📁 bookings\n| | | |_ 📄 route.ts\n| | |_ 📁 estimates\n| | | |_ 📄 route.ts\n| | | |_ 📁 accept-invite\n| | | | |_ 📄 route.ts\n| |_ 📁 components\n| | |_ 📄 CalendarPicker.tsx\n| | |_ 📄 SmartEstimateBlock.tsx\n| | |_ 📁 ui\n| | | |_ 📄 card.tsx\n| | | |_ 📄 calendar.tsx\n|_ 📁 lib\n| |_ 📄 firebase.ts"
+        "|_ 📁 app", "| |_ 📁 api", "| | |_ 📁 bookings","| | | |_ 📄 route.ts","| | |_ 📁 estimates\n| | | |_ 📄 route.ts\n| | | |_ 📁 accept-invite\n| | | | |_ 📄 route.ts\n| |_ 📁 components\n| | |_ 📄 CalendarPicker.tsx\n| | |_ 📄 SmartEstimateBlock.tsx\n| | |_ 📁 ui\n| | | |_ 📄 card.tsx\n| | | |_ 📄 calendar.tsx\n|_ 📁 lib\n| |_ 📄 firebase.ts"
       ]
     }
   ],
