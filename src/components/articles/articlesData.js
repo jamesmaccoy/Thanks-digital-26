@@ -555,7 +555,7 @@ export const articles = [
     category: "Process",
     date: "Jul 2, 2026",
     readTime: "8 min read",
-    image: "/images/articles/simpleplek_flow.png",
+    image: "/images/articles/AA.jpg",
     description:
       "Transitioning from a monolithic, single-tenant property model to a robust multi-tenant architecture is a critical step for scaling any property management platform. This evolution enables individual hosts to maintain data isolation while enjoying the benefits of custom descriptions and high-resolution media uploads—all powered by modern cloud infrastructure like Cloudflare R2.",
     author: {
