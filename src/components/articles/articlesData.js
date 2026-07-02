@@ -550,19 +550,139 @@ export const articles = [
     },
   },
   {
-    slug: "navigating-client-feedback-like-a-pro",
-    title: "Navigating client feedback like a pro.",
+    slug: "scaling-up-multi-tenant-architecture-property-management",
+    title: "Scaling Up: Implementing Multi-Tenant Architecture for Property Management",
     category: "Process",
-    date: "Jan 2, 2026",
+    date: "Jul 2, 2026",
     readTime: "8 min read",
-    image: "/images/articles/client-feedback.webp",
+    image: "/images/articles/simpleplek_flow.png",
     description:
-      "Not all feedback is created equal. Learn how to decode what clients really mean and turn vague notes into actionable design changes.",
+      "Transitioning from a monolithic, single-tenant property model to a robust multi-tenant architecture is a critical step for scaling any property management platform. This evolution enables individual hosts to maintain data isolation while enjoying the benefits of custom descriptions and high-resolution media uploads—all powered by modern cloud infrastructure like Cloudflare R2.",
     author: {
       name: "James Mac",
       role: "Designer & Software Engineer",
       avatar: "/images/avatars/james-mac.jpg",
     },
+    body: [
+      {
+        heading: "The Core Concept: Absolute Data Isolation",
+        paragraphs: [
+          "In this post, we’ll walk through the architectural transition, database modifications, and the secure media upload strategy required to achieve this.",
+          "The foundation of our multi-tenant model is simple: hostId. By binding every property record to a unique hostId (typically a Firebase Auth UID), we ensure that queries against the properties collection are always explicitly scoped.",
+          "Data Isolation: Hosts can only see, create, edit, and delete their own properties.",
+          "API Enforcement: Our backend routes enforce this scoping by verifying the active host's context on every request.",
+        ],
+        code: `// Example: Querying Firestore properties collection scoped by hostId
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+
+export async function getPropertiesForHost(hostId) {
+  const db = getFirestore();
+  const q = query(
+    collection(db, "properties"),
+    where("hostId", "==", hostId)
+  );
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}`,
+      },
+      {
+        heading: "Database Schema Extensions",
+        paragraphs: [
+          "To support this model, we’ve extended our Firestore PropertyDocument structure to include the tenant identifier and dynamic host-managed fields.",
+        ],
+        code: `// Extending the Firestore PropertyDocument interface
+interface PropertyDocument {
+  id: string;
+  name: string;
+  hostId: string;       // Tenant partition key
+  description: string;  // Custom host-managed field
+  mediaUrls: string[];  // Cloudflare R2 media paths
+  createdAt: string;
+  updatedAt?: string;
+}`,
+      },
+      {
+        heading: "Mastering Media with Cloudflare R2",
+        paragraphs: [
+          "High-resolution imagery is essential, but it can be a bottleneck. Instead of piping massive files through our API, we’ve implemented a Presigned URL pattern.",
+          "Secure Presigning: The client requests a secure, temporary upload URL from our app/api/media/presign endpoint.",
+          "Direct Upload: The browser uploads the image directly to the Cloudflare R2 bucket.",
+          "Structured Pathing: Files are organized under hosts/{hostId}/properties/{propertyId}/{timestamp}_{filename}, ensuring that even in a multi-tenant environment, file collisions are non-existent and cleanup is straightforward.",
+        ],
+        code: `// Generating pre-signed upload URLs with S3 Client (Cloudflare R2)
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+
+const r2 = new S3Client({
+  region: 'auto',
+  endpoint: process.env.R2_ENDPOINT,
+  credentials: {
+    accessKeyId: process.env.R2_ACCESS_KEY_ID,
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+  },
+});
+
+export async function getPresignedUploadUrl(hostId, propertyId, filename) {
+  const timestamp = Date.now();
+  const key = \`hosts/\${hostId}/properties/\${propertyId}/\${timestamp}_\${filename}\`;
+  
+  const command = new PutObjectCommand({
+    Bucket: process.env.R2_BUCKET_NAME,
+    Key: key,
+  });
+  
+  const url = await getSignedUrl(r2, command, { expiresIn: 3600 });
+  return { url, key };
+}`,
+      },
+      {
+        heading: "Developer Tip: The Offline Mock Fallback",
+        paragraphs: [
+          "For local development, we’ve introduced an offline fallback. If Cloudflare R2 credentials aren't configured, the system routes uploads to /api/media/mock-upload, writing files directly to the local /public/uploads directory. This allows for seamless, 100% offline testing of the image pipeline.",
+        ],
+        code: `// Offline local fallback route inside Next.js API
+import fs from 'fs';
+import path from 'path';
+
+export default async function handler(req, res) {
+  if (process.env.NODE_ENV !== 'production' && !process.env.R2_ACCESS_KEY_ID) {
+    // Route to local mock upload
+    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+    // Save file locally...
+  }
+}`,
+      },
+      {
+        heading: "API & Frontend Integration Flow",
+        paragraphs: [
+          "Transitioning to this model required updates across the full stack:",
+          "API Routing: Our GET /api/posts endpoint is now context-aware. If no hostId is provided, it intelligently falls back to a default admin host ID, ensuring our public-facing guest pages (homepage/bookings) remain fully functional without breaking backwards compatibility.",
+        ],
+      },
+      {
+        heading: "Monetizing & Empowering Hosts",
+        paragraphs: [
+          "Growth requires a sustainable business model. We have successfully integrated Yoco Subscriptions, allowing users to upgrade to Standard (R150/mo) or Pro (R299/mo) plans via our new /subscribe page. This system is fully automated; a webhook callback from Yoco triggers a serverless function that promotes the user to host status in real-time, instantly unlocking their property management dashboard.",
+          "The Host Portal & Storefront: Inside the admin portal, the frontend now passes the hostId parameter with every request. We've introduced a \"Become Host\" navigation link for seamless onboarding and overhauled the storefront homepage. The guest experience now supports dynamic host-based filtering and high-performance public-facing property thumbnails.",
+        ],
+      },
+      {
+        heading: "Ensuring Quality and Security",
+        paragraphs: [
+          "Our verification plan is three-pronged:",
+          "Data Isolation Testing: Verifying that host1 cannot access host2's properties.",
+          "Asset Management: Confirming files land in the correct paths and load efficiently in our new gallery component.",
+          "Booking Continuity: Ensuring that even with the new isolation layer, the core booking flows and calendar integrations remain uninterrupted for the end guest.",
+          "Production Stability: Our recent deployment report confirms a successful production build using Next.js 16.2.9 and Turbopack, with all strict TypeScript and linting checks passed.",
+          "This transition is more than just a code update—it’s an architectural shift that sets the stage for platform growth. By focusing on isolation, secure asset handling, and developer-friendly local testing, we’ve created a more secure and scalable foundation for all our hosts.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Bind all property records to a unique hostId for absolute data isolation.",
+      "Use presigned URLs to upload high-resolution media directly to Cloudflare R2.",
+      "Provide an offline mock fallback for local testing of the upload pipeline.",
+    ],
   },
   {
     slug: "the-anatomy-of-a-high-converting-landing-page",
