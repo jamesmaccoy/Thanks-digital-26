@@ -29,8 +29,8 @@ export const featuredProjects = [
   },
   {
     num: "03",
-    slug: "ACBA",
-    title: "ACBA",
+    slug: "hazeclub",
+    title: "TheHaze Club",
     category: "Brand Identity",
     desc: "Brand Identity & Product Design",
     year: "2024",
