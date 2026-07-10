@@ -30,7 +30,7 @@ export const featuredProjects = [
   {
     num: "03",
     slug: "hazeclub",
-    title: "TheHaze Club",
+    title: "The Haze Club",
     category: "Brand Identity",
     desc: "Brand Identity & Product Design",
     year: "2024",
