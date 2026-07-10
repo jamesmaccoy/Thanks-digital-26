@@ -112,6 +112,8 @@ export const allProjects = [
     desc: "Dev & Automation",
     year: "2024",
     image: "/images/work/hero/2.jpg",
+    summary: "Building a new venture & the role of digital in the exploding cannabis industry.",
+    quote: "We didn't just build a host dashboard; we engineered a digital sanctuary that isolates risk and protects the provider's livelihood.",
   },
 
   {
