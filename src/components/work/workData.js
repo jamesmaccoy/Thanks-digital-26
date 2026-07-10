@@ -107,7 +107,7 @@ export const allProjects = [
   {
     num: "07",
     slug: "ACBA",
-    title: "Haze Club",
+    title: "The Haze Club",
     category: "Brand Identity",
     desc: "Brand Identity & Product Design",
     year: "2024",
