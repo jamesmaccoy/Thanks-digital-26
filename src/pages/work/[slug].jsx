@@ -3,11 +3,11 @@ import Link from "next/link";
 import { allProjects } from "@/components/work/workData";
 
 const detailByCategory = {
-"Brand Strategy": {
-  challenge: "Enterprise-scale financial products face massive friction when rolling out new offerings like insurance. Navigating legacy banking expectations, stringent compliance rules, and consumer skepticism requires a precise narrative foundation that translates complex regulatory mandates into transparent, instant user trust.",
-  approach: "We architected a unified brand and positioning system centered around the 'build once, deploy many times' philosophy. By establishing a clear strategic messaging hierarchy, transparent compliance indicators, and an authoritative visual direction, we ensured the product's value and ironclad structural safety were immediately recognizable across every campaign, dashboard, and touchpoint.",
-  outcome: "The insurance offering was transformed from an abstract financial product into a clear, trusted sanctuary—empowering internal sales teams to eliminate friction and allowing users to engage with absolute confidence before their first transaction."
-},
+  "Brand Strategy": {
+    challenge: "Enterprise-scale financial products face massive friction when rolling out new offerings like insurance. Navigating legacy banking expectations, stringent compliance rules, and consumer skepticism requires a precise narrative foundation that translates complex regulatory mandates into transparent, instant user trust.",
+    approach: "We architected a unified brand and positioning system centered around the 'build once, deploy many times' philosophy. By establishing a clear strategic messaging hierarchy, transparent compliance indicators, and an authoritative visual direction, we ensured the product's value and ironclad structural safety were immediately recognizable across every campaign, dashboard, and touchpoint.",
+    outcome: "The insurance offering was transformed from an abstract financial product into a clear, trusted sanctuary—empowering internal sales teams to eliminate friction and allowing users to engage with absolute confidence before their first transaction."
+  },
   "Brand Identity": {
     challenge: "The brand possessed massive institutional momentum, but explaining a complex, highly regulated insurance product in a saturated market led to scattered product narratives and friction for sales teams.",
     approach: "We rebuilt the positioning system around transparency, defining clear category language, data privacy proof points, and a unified narrative hierarchy designed to establish immediate customer trust.",
@@ -18,7 +18,7 @@ const detailByCategory = {
     approach: "We redesigned the host portal around the ultimate 'golden path.' By utilizing rock-solid UI patterns, seamless tenant validation flows, and clear, gated access control structures, we isolated operational complexity without sacrificing interface clarity or user delight.",
     outcome: "The interface became an intuitive, highly resilient product ecosystem that streamlines secure CRUD execution and automatically maintains compliance integrity across every user interaction."
   },
-"Web Design": {
+  "Web Design": {
     challenge: "The digital web interface was bringing in significant traffic, but users were dropping off due to an over-complicated narrative structure and a lack of sequential, trust-building user flows.",
     approach: "We mapped out the ideal 'golden path' for conversion, relying on clean editorial layouts, explicit data safety indicators, and friction-free interaction patterns that effortlessly guided visitors from curiosity to secure action.",
     outcome: "The redesigned digital experience radically optimized conversion rates, elevated perceived trust, and provided the client with a modular web framework that scales safely over time."
@@ -28,6 +28,11 @@ const detailByCategory = {
     approach: "We implemented an immutable, code-driven design system wrapped in a 'build once, deploy many times' philosophy. We integrated programmatic testing gates into the CI/CD pipeline and deployed dynamic CSS print/digital style sheets controlled directly via the CMS.",
     outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
+  "Dev & Automation": {
+    challenge: "Legacy development structures, inconsistent codebase fragmentation, and disconnected deployment pipelines caused critical delays in delivery and introduced operational vulnerabilities across product lines.",
+    approach: "We implemented immutable code architecture and a unified 'build once, deploy many times' philosophy. By embedding CI/CD testing gates and deploying dynamic CSS print/digital style sheets controlled via a single CMS, we streamlined workflows and eliminated manual bottlenecks.",
+    outcome: "The result was a resilient, high-performance pipeline where automated mailers, dashboards, and all client-facing outputs instantly inherit secure design patterns, ensuring consistent, compliant user experiences across every release."
+  }
 };
 
 const resultByTitle = {
