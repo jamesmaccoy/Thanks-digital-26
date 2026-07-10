@@ -25,7 +25,7 @@ export const featuredProjects = [
     desc: "Brand Identity & Product Design",
     year: "2024",
     image: "/images/work/james/capitec.jpg",
-    summary: "An immutable CRUD dashboard and gated membership portal designed to empower trust providers with secure data handling, automated compliance, and frictionless tenant verification.",
+    summary: "An immutable CRUD dashboard and gated membership portal designed to empower trust providers with secure data handling, automated compliance, and frictionless trustee verification.",
   },
   {
     num: "03",
