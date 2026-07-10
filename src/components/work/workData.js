@@ -113,7 +113,9 @@ export const allProjects = [
     year: "2024",
     image: "/images/work/hero/2.jpg",
     summary: "Building a new venture & the role of digital in the exploding cannabis industry.",
-    quote: "We didn't just build a host dashboard; we engineered a digital sanctuary that isolates risk and protects the provider's livelihood.",
+    quote: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
+    outcome: "Widely shared on social platforms, and appearing on influential blogs. The interest in the offering seemed to have peaked, which led to customers going through email funnels and of course a few signups.",
+    approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
   },
 
   {
