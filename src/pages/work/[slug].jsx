@@ -29,9 +29,9 @@ const detailByCategory = {
     outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
   "Dev & Automation": {
-    challenge: "Legacy development structures, inconsistent codebase fragmentation, and disconnected deployment pipelines caused critical delays in delivery and introduced operational vulnerabilities across product lines.",
-    approach: "We implemented immutable code architecture and a unified 'build once, deploy many times' philosophy. By embedding CI/CD testing gates and deploying dynamic CSS print/digital style sheets controlled via a single CMS, we streamlined workflows and eliminated manual bottlenecks.",
-    outcome: "The result was a resilient, high-performance pipeline where automated mailers, dashboards, and all client-facing outputs instantly inherit secure design patterns, ensuring consistent, compliant user experiences across every release."
+    challenge: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
+    approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
+    outcome: "Widely shared on social platforms, and appearing on influential blogs. The interest in the offering seemed to have peaked, which led to customers going through email funnels and of course a few signups."
   }
 };
 
