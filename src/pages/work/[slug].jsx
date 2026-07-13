@@ -28,6 +28,13 @@ const detailByCategory = {
     approach: "We implemented an immutable, code-driven design system wrapped in a 'build once, deploy many times' philosophy. We integrated programmatic testing gates into the CI/CD pipeline and deployed dynamic CSS print/digital style sheets controlled directly via the CMS.",
     outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
+  "Digital transformation": {
+    approach: "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem.",
+    challenge: "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints.",
+    outcome: "The platform became a trusted hub for secure membership exchange, starting the president for thousands of clubs going forward legitamising a taxable control substance which was defended in the constitutional court ",
+    results: ["The constituion changed stoping prohibition", "There are now more clubs than there are checkers stores", "the ilicit market collapsed"]
+
+  },
   "Dev & Automation": {
     challenge: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
     approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
