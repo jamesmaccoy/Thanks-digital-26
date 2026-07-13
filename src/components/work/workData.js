@@ -29,7 +29,7 @@ export const featuredProjects = [
   },
   {
     num: "03",
-    slug: "ACBA",
+    slug: "the-haze-club",
     title: "The Haze Club",
     category: "Dev & Automation",
     desc: "Dev & Automation",
@@ -44,12 +44,13 @@ export const allProjects = [
     num: "01",
     slug: "simpleplek-app",
     title: "Simple Plek App",
-    category: "Brand Strategy",
+    category: "Product Design",
     desc: "Brand Strategy & Product Design",
     year: "2025",
     image: "/images/work/hero/simpleplek.png",
     summary: "A trust-first ecosystem designed to protect guest data and property access in South Africa's high-stakes short-term rental market, ensuring user delight under strict compliance.",
     quote: "Building a rental platform in South Africa means designing against default vulnerabilities—turning spatial risk into elegant, predictable digital security.",
+    results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
     num: "02",
@@ -61,17 +62,19 @@ export const allProjects = [
     image: "/images/work/james/simpleplek.jpg",
     summary: "An immutable CRUD dashboard and gated membership portal designed to empower property hosts with secure data handling, automated compliance, and frictionless tenant verification.",
     quote: "We didn't just build a host dashboard; we engineered a digital sanctuary that isolates risk and protects the provider's livelihood.",
+    results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
     num: "03",
     slug: "capitec",
     title: "Capitec Insure",
-    category: "Brand Strategy",
+    category: "Design System",
     desc: "Brand Identity & Product Design",
     year: "2024",
     image: "/images/work/hero/KV-1.jpg",
     summary: "A flawless, high-conversion mobile experience that turns enterprise-scale compliance into an intuitive user journey, using secure CRUD architectures and the 'build once, deploy many times' philosophy to drive friction-free financial momentum.",
     quote: "We proved that massive conversion drops can be solved without dark patterns—when you respect a user's intent and optimize the interface for absolute clarity, the metrics take care of themselves.",
+    results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
     num: "04",
@@ -84,6 +87,7 @@ export const allProjects = [
     image: "/images/work/james/capitec.jpg",
     summary: "A 'build once, deploy many times' core design system integrated with programmatic CI/CD testing gates to dynamically enforce pixel-perfect UX consistency and structural security across all digital endpoints.",
     quote: "By encoding compliance and design rules directly into code architecture, we eliminate design fragmentation and ensure the product remains a secure sanctuary across every release.",
+    results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
     num: "05",
@@ -95,36 +99,41 @@ export const allProjects = [
     image: "/images/work/hero/7.jpg",
     summary: "A flawless, high-conversion digital interface leveraging secure CRUD structures and elegant design patterns to turn high-stakes enterprise compliance into a seamless, delightful user journey.",
     quote: "We proved that high conversion rates don't require predatory dark patterns; when you respect a user's digital autonomy, trust and momentum naturally follow.",
+    results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
-    num: "06",
-    slug: "haze-club",
-    title: "haze club membership",
-    category: "Digital transformation",
-    desc: "Digital Transformation",
-    year: "2024",
-    image: "/images/work/james/portfolio-details-image.jpg",
-    summary: "Creating a marketplace that financial institutions trust",
-    quote: "The craft in data exchange of memberships meant that finacial instutions invested in the product",
-
+    "num": "06",
+    "slug": "the-haze-club",
+    "title": "The Haze Club membership",
+    "category": "Digital transformation",
+    "desc": "Digital Transformation",
+    "year": "2024",
+    "image": "/images/work/james/portfolio-details-image.jpg",
+    "summary": "Creating a marketplace that financial institutions trust under immense consumer demand.",
+    "quote": "The first of its kind backed by financial institutions solely because of the UX, the trust it instilled by refunding payments, and its ironclad member database privacy.",
+    "results": [
+      "R1M",
+      "Sales in 3 months",
+      "500",
+      "Memberships sold per month"
+    ]
   },
   {
-    num: "07",
-    slug: "ACBA",
-    title: "The Haze Club",
-    category: "Dev & Automation",
-    desc: "Dev & Automation",
-    year: "2024",
-    image: "/images/work/hero/2.jpg",
-    summary: "Building a new venture & the role of digital in the exploding cannabis industry.",
-    quote: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
-    outcome: "Widely shared on social platforms, and appearing on influential blogs. The interest in the offering seemed to have peaked, which led to customers going through email funnels and of course a few signups.",
-    approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
-    challenges: "Building a new venture & the role of digital in the exploding cannabis industry.",
-    design: "Building a new venture & the role of digital in the exploding cannabis industry.",
-    development: "Building a new venture & the role of digital in the exploding cannabis industry.",
-
-
+    "num": "07",
+    "slug": "constitutional-court",
+    "title": "The Haze Club constitution",
+    "category": "Dev & Automation",
+    "desc": "Dev & Automation",
+    "year": "2024",
+    "image": "/images/work/hero/2.jpg",
+    "summary": "Building a new venture & the role of digital in the exploding cannabis industry.",
+    "quote": "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition.",
+    "results": [
+      "3",
+      "DDOS attacks blocked",
+      "Zero",
+      "Data breaches"
+    ]
   },
 
   {
@@ -135,6 +144,7 @@ export const allProjects = [
     desc: "Digital Transformation & Design System",
     year: "2024",
     image: "/images/work/james/portfolio-details-image-half-1.jpg",
+    results: ["0+", "Design system regression errors", "2.1x", "Handoff velocity"],
   },
   {
     num: "09",
@@ -144,6 +154,7 @@ export const allProjects = [
     desc: "Brand Strategy & Web Design",
     year: "2024",
     image: "/images/work/james/santam-2.jpg",
+    results: ["38%", "Retail lift", "7", "Markets launched"],
   },
   {
     num: "10",
@@ -153,6 +164,7 @@ export const allProjects = [
     desc: "Brand Identity & Packaging",
     year: "2023",
     image: "/images/work/hero/6.jpg",
+    results: ["38%", "Retail lift", "7", "Markets launched"],
   },
   {
     num: "11",
@@ -162,6 +174,7 @@ export const allProjects = [
     desc: "Brand Identity & Product Design",
     year: "2024",
     image: "/images/work/hero/3.jpg",
+    results: ["500x", "Github stars gained", "95%", "Developer approval"],
   },
   {
     num: "12",
@@ -171,13 +184,12 @@ export const allProjects = [
     desc: "Brand Strategy & Web Design",
     year: "2024",
     image: "/images/work/hero/4.jpg",
+    results: ["2.1x", "Qualified leads", "41%", "Lower bounce rate"],
   },
 ];
 
 export const categories = [
   "All",
-  "Brand Strategy",
-  "Brand Identity",
   "Product Design",
   "Web Design",
   "Design System",

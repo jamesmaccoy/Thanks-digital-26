@@ -28,20 +28,20 @@ const detailByCategory = {
     approach: "We implemented an immutable, code-driven design system wrapped in a 'build once, deploy many times' philosophy. We integrated programmatic testing gates into the CI/CD pipeline and deployed dynamic CSS print/digital style sheets controlled directly via the CMS.",
     outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
-  "Digital transformation": {
-    approach: "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem.",
-    challenge: "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints.",
-    outcome: "The platform became a trusted hub for secure membership exchange, starting the president for thousands of clubs going forward legitamising a taxable control substance which was defended in the constitutional court ",
-    results: ["The constituion changed stoping prohibition", "There are now more clubs than there are checkers stores", "the ilicit market collapsed"]
 
+  "Digital transformation": {
+    "approach": "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem while scaling infrastructure to seamlessly absorb a massive surge in online sales traffic.",
+    "challenge": "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints—especially when hit with exponential public demand.",
+    "outcome": "The platform became a trusted hub for secure membership exchange, setting a precedent for thousands of clubs going forward, legitimizing a taxable controlled substance which was defended by escalating the model's legality right to the high court and constitutional arguments.",
   },
   "Dev & Automation": {
-    challenge: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
-    approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
-    outcome: "Widely shared on social platforms, and appearing on influential blogs. The interest in the offering seemed to have peaked, which led to customers going through email funnels and of course a few signups."
-  },
+    "challenge": "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition while ensuring ironclad member data privacy.",
+    "approach": "An executed polished product ready for high daily traffic. All user journeys and touchpoints considered, featuring advanced barcoding software to track individual allocations anonymously, payment options, and mobile notifications of each phase of the cycle.",
+    "outcome": "Widely shared on social platforms, and appearing on influential blogs. The explosive surge in membership demand was met with clean automated onboarding funnels that protected sensitive personal data from prying external systems."
+  }
+}
 
-};
+  ;
 
 const resultByTitle = {
   SimplePlek: ["340%", "User engagement increase", "52%", "Churn reduction"],
@@ -60,7 +60,7 @@ const resultByTitle = {
 
 export default function WorkDetailPage({ project, relatedProjects }) {
   const detail = detailByCategory[project.category];
-  const results = resultByTitle[project.title] || ["3.2x", "Performance lift", "48%", "Workflow improvement"];
+  const results = project.results || resultByTitle[project.title] || ["3.2x", "Performance lift", "48%", "Workflow improvement"];
 
   return (
     <>
@@ -159,24 +159,35 @@ export default function WorkDetailPage({ project, relatedProjects }) {
               <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-85" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="rounded-3xl border border-[#222] bg-[#0f0f0f] p-8 flex flex-col justify-between min-h-[260px]">
-                <div className="text-xs uppercase tracking-[0.26em] text-textGray">Primary result</div>
-                <div>
-                  <div className="text-5xl md:text-6xl font-bold tracking-tighter text-green-400">{results[0]}</div>
-                  <div className="text-textGray mt-3">{results[1]}</div>
+              {results.length === 1 ? (
+                <div className="sm:col-span-2 rounded-3xl border border-[#222] bg-[#0f0f0f] p-8 flex flex-col justify-between min-h-[260px]">
+                  <div className="text-xs uppercase tracking-[0.26em] text-textGray mb-4">Key Outcome</div>
+                  <div className="text-xl md:text-2xl font-medium leading-relaxed text-green-400">
+                    {results[0]}
+                  </div>
                 </div>
-              </div>
-              <div className="rounded-3xl border border-[#222] bg-[#0f0f0f] p-8 flex flex-col justify-between min-h-[260px]">
-                <div className="text-xs uppercase tracking-[0.26em] text-textGray">Secondary result</div>
-                <div>
-                  <div className="text-5xl md:text-6xl font-bold tracking-tighter text-blue-400">{results[2]}</div>
-                  <div className="text-textGray mt-3">{results[3]}</div>
-                </div>
-              </div>
+              ) : (
+                <>
+                  <div className="rounded-3xl border border-[#222] bg-[#0f0f0f] p-8 flex flex-col justify-between min-h-[260px]">
+                    <div className="text-xs uppercase tracking-[0.26em] text-textGray">Primary result</div>
+                    <div>
+                      <div className="text-5xl md:text-6xl font-bold tracking-tighter text-green-400">{results[0]}</div>
+                      <div className="text-textGray mt-3">{results[1]}</div>
+                    </div>
+                  </div>
+                  <div className="rounded-3xl border border-[#222] bg-[#0f0f0f] p-8 flex flex-col justify-between min-h-[260px]">
+                    <div className="text-xs uppercase tracking-[0.26em] text-textGray">Secondary result</div>
+                    <div>
+                      <div className="text-5xl md:text-6xl font-bold tracking-tighter text-blue-400">{results[2]}</div>
+                      <div className="text-textGray mt-3">{results[3]}</div>
+                    </div>
+                  </div>
+                </>
+              )}
               <div className="sm:col-span-2 rounded-3xl border border-[#222] bg-gradient-to-br from-[#111] to-[#050505] p-8 md:p-10">
                 <div className="text-xs uppercase tracking-[0.26em] text-textGray mb-5">What we delivered</div>
                 <div className="flex flex-wrap gap-3">
-                  {["Positioning", "Art direction", "Design system", "Responsive screens", "Launch assets", "Handoff specs"].map((item) => (
+                  {["Positioning", "UX Consultation", "UX Engineering", "Build & deployment", "Analytics", "Media Buying"].map((item) => (
                     <span key={item} className="rounded-full border border-[#333] px-4 py-2 text-sm text-textGray">{item}</span>
                   ))}
                 </div>
