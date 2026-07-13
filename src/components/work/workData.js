@@ -103,6 +103,12 @@ export const allProjects = [
     desc: "Digital Transformation & Design System",
     year: "2024",
     image: "/images/work/james/portfolio-details-image.jpg",
+    summary: "Creating a marketplace that financial institutions trust",
+    quote: "The craft in data exchange of memberships meant that finacial instutions invested in the product",
+    approach: "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem.",
+    challenge: "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints.",
+    outcome: "The platform became a trusted hub for secure membership exchange, starting the president for thousands of clubs going forward legitamising a taxable control substance which was defended in the constitutional court ",
+    results: ["The constituion changed stoping prohibition", "There are now more clubs than there are checkers stores", "the ilicit market collapsed"]
   },
   {
     num: "07",
