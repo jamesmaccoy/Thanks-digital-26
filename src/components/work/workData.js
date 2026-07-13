@@ -100,12 +100,13 @@ export const allProjects = [
     num: "06",
     slug: "haze-club",
     title: "haze club membership",
-    category: "digital transformation",
-    desc: "Digital Transformation & Design System",
+    category: "Digital transformation",
+    desc: "Digital Transformation",
     year: "2024",
     image: "/images/work/james/portfolio-details-image.jpg",
     summary: "Creating a marketplace that financial institutions trust",
     quote: "The craft in data exchange of memberships meant that finacial instutions invested in the product",
+
   },
   {
     num: "07",
@@ -180,6 +181,8 @@ export const categories = [
   "Product Design",
   "Web Design",
   "Design System",
+  "Digital transformation",
+  "Dev & Automation",
 ];
 
 export const projectResults = [

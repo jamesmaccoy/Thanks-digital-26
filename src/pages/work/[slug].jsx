@@ -39,7 +39,8 @@ const detailByCategory = {
     challenge: "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition",
     approach: "An executed polished product ready for high daily traffic. All user journeys, and touch points considered, with payment options and mobile notifications of each phase of the cycle.",
     outcome: "Widely shared on social platforms, and appearing on influential blogs. The interest in the offering seemed to have peaked, which led to customers going through email funnels and of course a few signups."
-  }
+  },
+
 };
 
 const resultByTitle = {
