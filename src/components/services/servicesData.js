@@ -89,7 +89,7 @@ export const deliverables = [
   {
     icon: "⬡",
     title: "Analytics",
-    description: "Email confirmation, payment confirmation, and analytical summaries.",
+    description: "Status updates, payment confirmation, and analytical summaries.",
   },
 ];
 
@@ -128,18 +128,18 @@ export const processSteps = [
 
 export const toolStack = [
   { name: "Figma", category: "Design" },
-  { name: "Framer", category: "Design" },
+  { name: "Cursor", category: "Development" },
   { name: "After Effects", category: "Motion" },
   { name: "Lottie", category: "Motion" },
   { name: "React", category: "Development" },
   { name: "Next.js", category: "Development" },
-  { name: "Webflow", category: "Development" },
+  { name: "Payload CMS", category: "Development" },
   { name: "TailwindCSS", category: "Development" },
   { name: "GSAP", category: "Animation" },
   { name: "Three.js", category: "Animation" },
-  { name: "Notion", category: "Collaboration" },
-  { name: "Slack", category: "Collaboration" },
-  { name: "Linear", category: "Collaboration" },
+  { name: "Antigravity", category: "Development" },
+  { name: "Gmail", category: "Collaboration" },
+  { name: "Gemini", category: "Development" },
   { name: "Loom", category: "Collaboration" },
 ];
 

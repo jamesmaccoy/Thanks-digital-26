@@ -11,10 +11,10 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>OPTIMA Contact | Let&apos;s start talking</title>
+        <title>THANKS DIGITAL | Let&apos;s start talking</title>
         <meta
           name="description"
-          content="Get in touch with OPTIMA. Project inquiries, partnership opportunities, and discovery calls. Offices in New York, London, and Singapore."
+          content="Get in touch with THANKS DIGITAL. Project inquiries, partnership opportunities, and discovery calls. Offices in New York, London, and Singapore."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

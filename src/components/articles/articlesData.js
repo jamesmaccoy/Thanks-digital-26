@@ -290,7 +290,7 @@ export async function checkBookingPermission(bookingId: string, userId: string):
       heading: "Project Directory Structure",
       paragraphs: [
         "To keep your API routing layer, frontend components, and security schemas completely isolated, structure your next-gen directory as follows:",
-        "|_ 📁 app", "| |_ 📁 api", "| | |_ 📁 bookings","| | | |_ 📄 route.ts","| | |_ 📁 estimates","| | | |_ 📄 route.ts","| | | |_ 📁 accept-invite","| | | | |_ 📄 route.ts","| |_ 📁 components","| | |_ 📄 CalendarPicker.tsx","| | |_ 📄 SmartEstimateBlock.tsx","| | |_ 📁 ui","| | | |_ 📄 card.tsx","| | | |_ 📄 calendar.tsx","|_ 📁 lib","| |_ 📄 firebase.ts"
+        "|_ 📁 app", "| |_ 📁 api", "| | |_ 📁 bookings", "| | | |_ 📄 route.ts", "| | |_ 📁 estimates", "| | | |_ 📄 route.ts", "| | | |_ 📁 accept-invite", "| | | | |_ 📄 route.ts", "| |_ 📁 components", "| | |_ 📄 CalendarPicker.tsx", "| | |_ 📄 SmartEstimateBlock.tsx", "| | |_ 📁 ui", "| | | |_ 📄 card.tsx", "| | | |_ 📄 calendar.tsx", "|_ 📁 lib", "| |_ 📄 firebase.ts"
       ]
     }
   ],
@@ -441,115 +441,6 @@ export const articles = [
     ],
   },
   {
-    slug: "beyond-minimalism-whats-next-in-web-design",
-    title: "sharing a database object using permissions 2",
-    category: "Trends",
-    date: "Feb 3, 2026",
-    readTime: "8 min read",
-    image: "/images/articles/james/spaceA.gif",
-    description:
-      "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
-    author: {
-      name: "James Mac",
-      role: "Designer & Software Engineer",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-    body: [
-      {
-        paragraphs: [
-          "In a world where digital threats are ever-present, we provide the strategies and tools to protect your assets, transforming risk into security and ensuring a prosperous future for generations to come.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "pricing-creative-work-without-undervaluing-it",
-    title: "Creating a calendar component using Payload CMS.",
-    category: "Business",
-    date: "Mar 5, 2026",
-    readTime: "9 min read",
-    image: "/images/articles/james/spaceB.gif",
-    description:
-      "The uncomfortable truth about creative pricing and how to charge what you're worth without losing clients.",
-    author: {
-      name: "James Mac",
-      role: "Designer & Software Engineer",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-  },
-  {
-    slug: "how-we-run-design-critiques-that-actually-work",
-    title: "Authentication using Payload CMS.",
-    category: "Process",
-    date: "Feb 18, 2026",
-    readTime: "6 min read",
-    image: "/images/articles/james/spaceC.gif",
-    description:
-      "Most design critiques are broken. Here's the framework we use to give actionable feedback without killing creativity.",
-    author: {
-      name: "Maya Chen",
-      role: "Design Lead",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-  },
-  {
-    slug: "why-we-ditched-proposals-for-paid-discovery",
-    title: "Creating an agentic chatbot using Payload CMS.",
-    category: "Business",
-    date: "Jan 28, 2026",
-    readTime: "5 min read",
-    image: "/images/articles/james/spaceD.gif",
-    description:
-      "Free proposals are a race to the bottom. We switched to paid discovery phases and both our work and client relationships got dramatically better.",
-    author: {
-      name: "Jordan Lee",
-      role: "Product Designer",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-  },
-  {
-    slug: "motion-design-as-a-competitive-advantage",
-    title: "Using a hook to handle form submissions in Next.js.",
-    category: "Design",
-    date: "Jan 15, 2026",
-    readTime: "7 min read",
-    image: "/images/articles/motion-design.webp",
-    description:
-      "Forms are easily the most overlooked / misunderstood chapters in UX. With little action and knowledge of the DOM, you can perform surgery on a database if executed correctly. Done incorrectly it can cost millions for a humble form.Simplified we are adding a pre made component to our site and displaying it on the front end to clients in order to request a booking",
-    body: [
-      {
-        heading: "Step 2 Form submissions",
-        paragraphs: [
-          " Add the Shadcn premade component to your site in order to display it on front end",
-          "|_ 📁 app",
-          "|_ 📁 components",
-          "|_ 📁 ui",
-          "|_ 📄 card.tsx",
-          "|_ 📄 calendar.tsx",
-          "|_ 📁 collections",
-          "|_ 📁 fields",
-          "|_ 📄 paylaod types.ts",
-          "|_ 📄 payload.config.ts",
-          "Step 3 Handle the form submission",
-          "Step 4 Validate the form data",
-          "Step 5 Submit the form data to the database",
-        ],
-      },
-      {
-        heading: "Step 3 Handle the form submission",
-        paragraphs: [
-          "Step 4 Validate the form data",
-          "Step 5 Submit the form data to the database",
-        ],
-      },
-    ],
-    author: {
-      name: "James Mac",
-      role: "Designer & Software Engineer",
-      avatar: "/images/avatars/james-mac.jpg",
-    },
-  },
-  {
     slug: "scaling-up-multi-tenant-architecture-property-management",
     title: "Scaling Up: Implementing Multi-Tenant Architecture for Property Management",
     category: "Process",
@@ -683,6 +574,115 @@ export default async function handler(req, res) {
       "Use presigned URLs to upload high-resolution media directly to Cloudflare R2.",
       "Provide an offline mock fallback for local testing of the upload pipeline.",
     ],
+  },
+  {
+    slug: "beyond-minimalism-whats-next-in-web-design",
+    title: "sharing a database object using permissions 2",
+    category: "Trends",
+    date: "Feb 3, 2026",
+    readTime: "8 min read",
+    image: "/images/articles/james/spaceA.gif",
+    description:
+      "Minimalism dominated the last decade. But the pendulum is swinging—discover the emerging trends reshaping digital design in 2026.",
+    author: {
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
+    body: [
+      {
+        paragraphs: [
+          "In a world where digital threats are ever-present, we provide the strategies and tools to protect your assets, transforming risk into security and ensuring a prosperous future for generations to come.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pricing-creative-work-without-undervaluing-it",
+    title: "Creating a calendar component using Payload CMS.",
+    category: "Business",
+    date: "Mar 5, 2026",
+    readTime: "9 min read",
+    image: "/images/articles/james/spaceB.gif",
+    description:
+      "The uncomfortable truth about creative pricing and how to charge what you're worth without losing clients.",
+    author: {
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
+  },
+  {
+    slug: "how-we-run-design-critiques-that-actually-work",
+    title: "Authentication using Payload CMS.",
+    category: "Process",
+    date: "Feb 18, 2026",
+    readTime: "6 min read",
+    image: "/images/articles/james/spaceC.gif",
+    description:
+      "Most design critiques are broken. Here's the framework we use to give actionable feedback without killing creativity.",
+    author: {
+      name: "Maya Chen",
+      role: "Design Lead",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
+  },
+  {
+    slug: "why-we-ditched-proposals-for-paid-discovery",
+    title: "Creating an agentic chatbot using Payload CMS.",
+    category: "Business",
+    date: "Jan 28, 2026",
+    readTime: "5 min read",
+    image: "/images/articles/james/spaceD.gif",
+    description:
+      "Free proposals are a race to the bottom. We switched to paid discovery phases and both our work and client relationships got dramatically better.",
+    author: {
+      name: "Jordan Lee",
+      role: "Product Designer",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
+  },
+  {
+    slug: "motion-design-as-a-competitive-advantage",
+    title: "Using a hook to handle form submissions in Next.js.",
+    category: "Design",
+    date: "Jan 15, 2026",
+    readTime: "7 min read",
+    image: "/images/articles/motion-design.webp",
+    description:
+      "Forms are easily the most overlooked / misunderstood chapters in UX. With little action and knowledge of the DOM, you can perform surgery on a database if executed correctly. Done incorrectly it can cost millions for a humble form.Simplified we are adding a pre made component to our site and displaying it on the front end to clients in order to request a booking",
+    body: [
+      {
+        heading: "Step 2 Form submissions",
+        paragraphs: [
+          " Add the Shadcn premade component to your site in order to display it on front end",
+          "|_ 📁 app",
+          "|_ 📁 components",
+          "|_ 📁 ui",
+          "|_ 📄 card.tsx",
+          "|_ 📄 calendar.tsx",
+          "|_ 📁 collections",
+          "|_ 📁 fields",
+          "|_ 📄 paylaod types.ts",
+          "|_ 📄 payload.config.ts",
+          "Step 3 Handle the form submission",
+          "Step 4 Validate the form data",
+          "Step 5 Submit the form data to the database",
+        ],
+      },
+      {
+        heading: "Step 3 Handle the form submission",
+        paragraphs: [
+          "Step 4 Validate the form data",
+          "Step 5 Submit the form data to the database",
+        ],
+      },
+    ],
+    author: {
+      name: "James Mac",
+      role: "Designer & Software Engineer",
+      avatar: "/images/avatars/james-mac.jpg",
+    },
   },
   {
     slug: "the-anatomy-of-a-high-converting-landing-page",

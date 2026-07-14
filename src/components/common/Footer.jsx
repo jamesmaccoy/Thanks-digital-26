@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -7,6 +7,42 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const footerRef = useRef(null);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState(null); // 'submitting' | 'success' | 'error' | null
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email || !email.trim()) return;
+
+    setStatus("submitting");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/v1/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email.trim(), source: "Footer" }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.status) {
+        setStatus("success");
+        setMessage(data.data?.message || "Successfully subscribed!");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage(data.data || "Something went wrong.");
+      }
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setStatus("error");
+      setMessage("Failed to subscribe. Please try again.");
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,13 +98,40 @@ export default function Footer() {
             <p className="text-sm text-textGray mb-4">
               Subscribe to our newsletter.
             </p>
-            <div className="flex border-b border-[#333] pb-2">
-              <input
-                type="email"
-                placeholder="Email"
-                className="bg-transparent border-none outline-none w-full text-white placeholder:text-[#555]"
-              />
-              <button className="text-xl hover:text-gray-400">+</button>
+            <div className="flex flex-col gap-2 w-full">
+              {status === "success" ? (
+                <div className="text-left lg:text-right text-sm py-2">
+                  <p className="text-white font-medium">🎉 {message}</p>
+                  <button
+                    onClick={() => setStatus(null)}
+                    className="mt-1 text-xs text-textGray underline hover:text-white transition-colors"
+                  >
+                    Subscribe another email
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex border-b border-[#333] pb-2 w-full">
+                  <input
+                    type="email"
+                    required
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={status === "submitting"}
+                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-[#555] disabled:opacity-50"
+                  />
+                  <button 
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="text-xl hover:text-gray-400 shrink-0 disabled:opacity-50 ml-2"
+                  >
+                    {status === "submitting" ? "..." : "+"}
+                  </button>
+                </form>
+              )}
+              {status === "error" && (
+                <p className="text-xs text-red-500 text-left lg:text-right">{message}</p>
+              )}
             </div>
           </div>
 
@@ -108,13 +171,13 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex gap-6 text-xl">
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="https://x.com/footune" className="hover:text-white transition-colors">
             𝕏
           </a>
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="https://www.instagram.com/thankyou.digital/" className="hover:text-white transition-colors">
             IG
           </a>
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/james-mac-91b3616/" className="hover:text-white transition-colors">
             IN
           </a>
         </div>
