@@ -10,13 +10,13 @@ export const heroStats = [
 export const services = [
   {
     num: "01",
-    name: "Brand Identity",
+    name: "Digital transformation",
     tagline: "Make your mark unmistakable.",
     description:
-      "Complete brand systems that capture your essence and stand out in market. From strategy to execution, we build identities that resonate with your audience and scale with your ambition.",
+      "Transformation narrows the focus on the primary objective of services providing the users with clarity",
     image: "/images/services/blog/hero_blacksheep.jpg",
-    categories: ["Logo Design", "Visual Identity", "Brand Guidelines", "Positioning", "Naming", "Tone of Voice"],
-    deliverables: ["Logo suite (primary, icon, lockups)", "Colour palette & type system", "Brand guidelines (40-80 pages)", "Asset library for digital & print"],
+    categories: ["Relational Database", "Design pattern", "Proven Architypes", "Digital Facets", "Web3 ", "Digital tracing"],
+    deliverables: ["View (list, details, checkout)", "Analaytics", "Deployment", "DNS managment"],
   },
   {
     num: "02",
@@ -50,7 +50,7 @@ export const services = [
   },
   {
     num: "05",
-    name: "Development",
+    name: "Dev & Automation",
     tagline: "Pixel-perfect code, production-ready.",
     description:
       "Pixel-perfect implementation that brings designs to life. Clean, performant code built with modern frameworks and best practices — no shortcuts, no tech debt.",
