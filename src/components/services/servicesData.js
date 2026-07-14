@@ -63,8 +63,8 @@ export const services = [
 export const deliverables = [
   {
     icon: "◎",
-    title: "Strategy & research",
-    description: "Competitor audit, user research, brand positioning, creative brief.",
+    title: "Digital overhaul",
+    description: "Narrowly defined specificaton leading to payment confirmaton paper trail",
   },
   {
     icon: "◈",
@@ -78,18 +78,18 @@ export const deliverables = [
   },
   {
     icon: "▸",
-    title: "Prototypes",
-    description: "Interactive Figma prototypes for user testing and stakeholder alignment.",
+    title: "Deployed Prototypes",
+    description: "User tested deployed production ready micro-sites with payment integration.",
   },
   {
     icon: "◫",
     title: "Production assets",
-    description: "Export-ready files, developer specs, responsive breakpoints.",
+    description: "Live production ready codebase with deployment and DNS management.",
   },
   {
     icon: "⬡",
-    title: "Documentation",
-    description: "Brand guidelines, design rationale, implementation notes.",
+    title: "Analytics",
+    description: "Email confirmation, payment confirmation, and analytical summaries.",
   },
 ];
 
