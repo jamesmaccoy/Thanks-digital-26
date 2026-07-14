@@ -6,11 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    name: "Brand Identity",
-    title: "[01] Brand Identity",
-    description: "Complete brand systems built on transparency and deep institutional trust. I design identities that capture your core ethos and build an unshakeable bond with users weary of default tracking.",
+    name: "digital transformation",
+    title: "[01] Digital transformation",
+    description: "Transformation narrows the focus on the primary objective of services providing the users with clarity",
     image: "/images/services/blog/hero_blacksheep.jpg",
-    categories: ["Brand Positioning", "Visual Systems", "Identity Guidelines", "Strategic Messaging"],
+    categories: ["Relational databases", "Design patterns", "Proven Architypes", "Digital Traces"],
   },
   {
     name: "Digital Design",
@@ -71,7 +71,7 @@ export default function ServicesSection() {
         <div className="sticky top-32">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 tracking-tight">Services</h2>
           <p className="text-textGray text-lg mb-10">
-          Full-spectrum design capabilities architected for digital autonomy. Whether you need a secure product ecosystem or a brand that stands as a sanctuary, I have the senior expertise to build it. No bloated agency overhead, no data-leaking outsourcing—just uncompromised, high-stakes execution.
+            Full-spectrum design capabilities architected for digital autonomy. Whether you need a secure product ecosystem or a brand that stands as a sanctuary, I have the senior expertise to build it. No bloated agency overhead, no data-leaking outsourcing—just uncompromised, high-stakes execution.
           </p>
           <ul className="hidden lg:block space-y-4 text-xl lg:text-2xl font-medium text-textGray">
             {services.map((service, i) => (
