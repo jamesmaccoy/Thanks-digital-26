@@ -56,9 +56,7 @@ export default function ContactHero() {
 
         <div className="contact-hero-copy opacity-0 translate-y-8">
           <p className="text-base md:text-lg lg:text-xl text-textGray leading-relaxed max-w-xl">
-            Your next project deserves world-class design. Whether you have a
-            clear brief or just a spark of an idea, we&apos;re here to listen
-            and help you figure out the best path forward.
+            Create our next project on solid design foundation, built from experience of gracious mistakes done by a human with agentic assistence
           </p>
         </div>
       </div>

@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    name: "digital transformation",
-    title: "[01] Digital transformation",
+    name: "Digital Transformation",
+    title: "[01] Digital Transformation",
     description: "Transformation narrows the focus on the primary objective of services providing the users with clarity",
     image: "/images/services/blog/hero_blacksheep.jpg",
     categories: ["Relational databases", "Design patterns", "Proven Architypes", "Digital Traces"],

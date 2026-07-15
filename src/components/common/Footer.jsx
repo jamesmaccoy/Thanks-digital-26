@@ -76,8 +76,7 @@ export default function Footer() {
             hello@thanks.digital +
           </a>
           <p className="text-lg md:text-2xl text-textGray max-w-md leading-relaxed mt-6 md:mt-10">
-            Your next project deserves world-class design. Stop settling for
-            mediocre and start working with designers who care as much as you do.
+            Create our nextproject on solid design foundation, built from experience of gracious mistakes done by a human with agentic assistence
           </p>
 
           <div className="mt-12 md:mt-20 flex items-center gap-4">
@@ -120,7 +119,7 @@ export default function Footer() {
                     disabled={status === "submitting"}
                     className="bg-transparent border-none outline-none w-full text-white placeholder:text-[#555] disabled:opacity-50"
                   />
-                  <button 
+                  <button
                     type="submit"
                     disabled={status === "submitting"}
                     className="text-xl hover:text-gray-400 shrink-0 disabled:opacity-50 ml-2"
