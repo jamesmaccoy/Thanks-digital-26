@@ -56,7 +56,7 @@ export const allProjects = [
     num: "02",
     slug: "simpleplek-host",
     title: "Simple Plek Host",
-    category: "Digital Transformation",
+    category: "Digital Transformation 2",
     desc: "Digital Transformation, Development & Automation",
     year: "2025",
     image: "/images/work/james/simpleplek.jpg",
