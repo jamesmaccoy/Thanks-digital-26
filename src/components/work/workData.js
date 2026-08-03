@@ -49,19 +49,19 @@ export const allProjects = [
     year: "2025",
     image: "/images/work/hero/simpleplek.png",
     summary: "A trust-first ecosystem designed to protect guest data and property access in South Africa's high-stakes short-term rental market, ensuring user delight under strict compliance.",
-    quote: "Building a rental platform in South Africa means designing against default vulnerabilities—turning spatial risk into elegant, predictable digital security.",
+    quote: "We turned an ordinary event calendar into a memberhsip pairing packages suited to the property",
     results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
     num: "02",
     slug: "simpleplek-host",
     title: "Simple Plek Host",
-    category: "Product Design",
+    category: "Digital Transformation 2",
     desc: "Digital transformation & Dev & Automation",
     year: "2025",
     image: "/images/work/james/simpleplek.jpg",
     summary: "An immutable CRUD dashboard and gated membership portal designed to empower property hosts with secure data handling, automated compliance, and frictionless tenant verification.",
-    quote: "We didn't just build a host dashboard; we engineered a digital sanctuary that isolates risk and protects the provider's livelihood.",
+    quote: "We engineered a multitennant offering that is gated by the entitment the subscription provides",
     results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
@@ -194,6 +194,7 @@ export const categories = [
   "Web Design",
   "Design System",
   "Digital transformation",
+  "Digital Transformation 2",
   "Dev & Automation",
 ];
 

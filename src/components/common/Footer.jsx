@@ -76,7 +76,7 @@ export default function Footer() {
             hello@thanks.digital +
           </a>
           <p className="text-lg md:text-2xl text-textGray max-w-md leading-relaxed mt-6 md:mt-10">
-            Create our nextproject on solid design foundation, built from experience of gracious mistakes done by a human with agentic assistence
+            Create our next project on solid design foundation, built from experience of gracious mistakes done by a human with agentic assistence
           </p>
 
           <div className="mt-12 md:mt-20 flex items-center gap-4">

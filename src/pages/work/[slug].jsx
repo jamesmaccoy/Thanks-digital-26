@@ -14,9 +14,14 @@ const detailByCategory = {
     outcome: "The new strategy unified the brand message across campaigns and products, making the insurance offering easily understandable, highly authoritative, and simple to scale without message dilution."
   },
   "Product Design": {
-    challenge: "Managing guest access and rental compliance carries immense regulatory and operational risk. High-friction onboarding loops and ambiguous data entry paths were leading to severe drop-offs among security-conscious property owners.",
-    approach: "We redesigned the host portal around the ultimate 'golden path.' By utilizing rock-solid UI patterns, seamless tenant validation flows, and clear, gated access control structures, we isolated operational complexity without sacrificing interface clarity or user delight.",
-    outcome: "The interface became an intuitive, highly resilient product ecosystem that streamlines secure CRUD execution and automatically maintains compliance integrity across every user interaction."
+    challenge: "Many smaller short term booking platforms struggling with an event calendar competing with the megolith international companies supplying to the huge demand of  housing",
+    approach: "used a common membership concept and a javascript design framework to deliver conditional logical packagages at checkout which members could easily share thier benefits of their membership.",
+    outcome: "An ituative membership platform that payment gateway for inacseisble packages paired with their active subscription delivering bepoke experiences created by hosts"
+  },
+  "Digital Transformation 2": {
+    "challenge": "Tax regulations must occur reporting on experince based holidays invading the privacy of each host but the business had not yet nurtued what the offering is.",
+    "approach": "Creating properties paired with customised packages in an intuative dashboard that categories between offering and upselling packages that is gated by the entitment the subscription provides",
+    "outcome": "A sharablbe package curated by a host driving package bookings regarless of the users subscription status",
   },
   "Web Design": {
     challenge: "The digital web interface was bringing in significant traffic, but users were dropping off due to an over-complicated narrative structure and a lack of sequential, trust-building user flows.",
@@ -29,11 +34,6 @@ const detailByCategory = {
     outcome: "This removed manual intervention from the workflow entirely, ensuring that every automated mailer, dashboard view, and printed summary instantly inherited the latest secure design patterns and compliant layouts with zero UX degradation."
   },
 
-  "Digital transformation": {
-    "approach": "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem while scaling infrastructure to seamlessly absorb a massive surge in online sales traffic.",
-    "challenge": "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints—especially when hit with exponential public demand.",
-    "outcome": "The platform became a trusted hub for secure membership exchange, setting a precedent for thousands of clubs going forward, legitimizing a taxable controlled substance which was defended by escalating the model's legality right to the high court and constitutional arguments.",
-  },
   "Dev & Automation": {
     "challenge": "Validating the MVP: Ensure there is sufficient customer demand for the product, before investing in scalability, and navigating through the prejudice in our country’s long history of prohibition while ensuring ironclad member data privacy.",
     "approach": "An executed polished product ready for high daily traffic. All user journeys and touchpoints considered, featuring advanced barcoding software to track individual allocations anonymously, payment options, and mobile notifications of each phase of the cycle.",
