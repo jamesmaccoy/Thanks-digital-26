@@ -13,15 +13,15 @@ const detailByCategory = {
     approach: "We rebuilt the positioning system around transparency, defining clear category language, data privacy proof points, and a unified narrative hierarchy designed to establish immediate customer trust.",
     outcome: "The new strategy unified the brand message across campaigns and products, making the insurance offering easily understandable, highly authoritative, and simple to scale without message dilution."
   },
-  "Product Design": {
-    challenge: "Many smaller short term booking platforms struggling with an event calendar competing with the megolith international companies supplying to the huge demand of  housing",
-    approach: "used a common membership concept and a javascript design framework to deliver conditional logical packagages at checkout which members could easily share thier benefits of their membership.",
-    outcome: "An ituative membership platform that payment gateway for inacseisble packages paired with their active subscription delivering bepoke experiences created by hosts"
+"Product Design": {
+    challenge: "Smaller short-term booking platforms struggled to compete with global industry monoliths using traditional event calendars that failed to meet shifting guest demand.",
+    approach: "Leveraging a universal membership concept and modern JavaScript design frameworks, we built conditional logic into checkout, allowing members to effortlessly unlock and share exclusive host perks.",
+    outcome: "An intuitive membership and payment gateway that unlocks exclusive experience packages paired with active subscriptions, delivering bespoke stays curated directly by hosts."
   },
   "Digital Transformation 2": {
-    "challenge": "Tax regulations must occur reporting on experince based holidays invading the privacy of each host but the business had not yet nurtued what the offering is.",
-    "approach": "Creating properties paired with customised packages in an intuative dashboard that categories between offering and upselling packages that is gated by the entitment the subscription provides",
-    "outcome": "A sharablbe package curated by a host driving package bookings regarless of the users subscription status",
+    challenge: "Strict tax regulations required invasive reporting on experience-based stays, invading host privacy while the business struggled to clearly define its core digital offering.",
+    approach: "Designed a host dashboard to pair properties with dynamic, custom packages—categorizing standard stays versus add-on upsells, all gated by subscription-based entitlement rules.",
+    outcome: "A shareable package portal curated by hosts that drives direct add-on bookings, regardless of the guest's underlying subscription status."
   },
   "Web Design": {
     challenge: "The digital web interface was bringing in significant traffic, but users were dropping off due to an over-complicated narrative structure and a lack of sequential, trust-building user flows.",
