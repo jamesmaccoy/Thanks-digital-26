@@ -104,7 +104,7 @@ export const allProjects = [
     "num": "06",
     "slug": "the-haze-club",
     "title": "The Haze Club membership",
-    "category": "Digital Transformation 2",
+    "category": "Digital Transformation",
     "desc": "Digital Transformation",
     "year": "2024",
     "image": "/images/work/james/portfolio-details-image.jpg",

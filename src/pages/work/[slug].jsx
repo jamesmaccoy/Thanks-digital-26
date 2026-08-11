@@ -18,6 +18,11 @@ const detailByCategory = {
     approach: "Leveraging a universal membership concept and modern JavaScript design frameworks, we built conditional logic into checkout, allowing members to effortlessly unlock and share exclusive host perks.",
     outcome: "An intuitive membership and payment gateway that unlocks exclusive experience packages paired with active subscriptions, delivering bespoke stays curated directly by hosts."
   },
+  "Digital Transformation": {
+    challenge: "Financial institutions require absolute security and compliance for asset exchange, but user experience often suffers under heavy regulatory constraints—especially when hit with exponential public demand.",
+   approach: "We created a seamless, high-trust environment for the exchange of memberships. By integrating robust security protocols and transparent compliance frameworks, we established the necessary foundation for financial institutions to confidently exchange assets within the ecosystem while scaling infrastructure to seamlessly absorb a massive surge in online sales traffic.",
+    outcome: "The platform became a trusted hub for secure membership exchange, setting a precedent for thousands of clubs going forward, legitimizing a taxable controlled substance which was defended by escalating the model's legality right to the high court and constitutional arguments.",
+  },
   "Digital Transformation 2": {
     challenge: "Strict tax regulations required invasive reporting on experience-based stays, invading host privacy while the business struggled to clearly define its core digital offering.",
     approach: "Designed a host dashboard to pair properties with dynamic, custom packages—categorizing standard stays versus add-on upsells, all gated by subscription-based entitlement rules.",
