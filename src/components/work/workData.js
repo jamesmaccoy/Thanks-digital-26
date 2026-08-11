@@ -79,7 +79,6 @@ export const allProjects = [
   {
     num: "04",
     slug: "capitec-insure",
-
     title: "Capitec Insure",
     category: "Design System",
     desc: "Digital Transformation",
@@ -105,7 +104,7 @@ export const allProjects = [
     "num": "06",
     "slug": "the-haze-club",
     "title": "The Haze Club membership",
-    "category": "Digital transformation",
+    "category": "Digital Transformation 2",
     "desc": "Digital Transformation",
     "year": "2024",
     "image": "/images/work/james/portfolio-details-image.jpg",
@@ -115,8 +114,7 @@ export const allProjects = [
       "R1M",
       "Sales in 3 months",
       "500",
-      "Memberships sold per month"
-    ]
+      "Memberships sold per month"],
   },
   {
     "num": "07",
