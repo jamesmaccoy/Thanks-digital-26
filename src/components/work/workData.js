@@ -42,6 +42,20 @@ export const featuredProjects = [
 export const allProjects = [
   {
     num: "01",
+    slug: "simpleplek",
+    title: "Simple Plek",
+    category: "Brand Strategy",
+    desc: "Brand Strategy & Product Design",
+    year: "2025",
+    image: "/images/work/james/simpleplek.jpg",
+    summary:
+      "A trust-first ecosystem designed to protect guest data and property access in South Africa's high-stakes short-term rental market, ensuring user delight under strict compliance.",
+    quote:
+      "We transformed a standard event calendar into an intelligent membership model, seamlessly pairing curated packages with each property.",
+    results: ["340%", "User engagement increase", "52%", "Churn reduction"],
+  },
+  {
+    num: "02",
     slug: "simpleplek-app",
     title: "Simple Plek App",
     category: "Product Design",
@@ -53,7 +67,7 @@ export const allProjects = [
     results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
-    num: "02",
+    num: "03",
     slug: "simpleplek-host",
     title: "Simple Plek Host",
     category: "Digital Transformation 2",
@@ -65,7 +79,7 @@ export const allProjects = [
     results: ["340%", "User engagement increase", "52%", "Churn reduction"],
   },
   {
-    num: "03",
+    num: "04",
     slug: "capitec",
     title: "Capitec Insure",
     category: "Design System",
@@ -77,7 +91,7 @@ export const allProjects = [
     results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
-    num: "04",
+    num: "05",
     slug: "capitec-insure",
     title: "Capitec Insure",
     category: "Design System",
@@ -89,7 +103,7 @@ export const allProjects = [
     results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
-    num: "05",
+    num: "06",
     slug: "capitec-app",
     title: "Capitec App",
     category: "Web Design",
@@ -101,7 +115,7 @@ export const allProjects = [
     results: ["$12M", "Series A raised", "3.8x", "Demo requests"],
   },
   {
-    "num": "06",
+    "num": "07",
     "slug": "the-haze-club",
     "title": "The Haze Club membership",
     "category": "Digital Transformation",
@@ -117,7 +131,7 @@ export const allProjects = [
       "Memberships sold per month"],
   },
   {
-    "num": "07",
+    "num": "08",
     "slug": "constitutional-court",
     "title": "The Haze Club constitution",
     "category": "Dev & Automation",
@@ -135,7 +149,7 @@ export const allProjects = [
   },
 
   {
-    num: "08",
+    num: "09",
     slug: "blacksheep",
     title: "Black Sheep",
     category: "Design System",
@@ -145,7 +159,7 @@ export const allProjects = [
     results: ["0+", "Design system regression errors", "2.1x", "Handoff velocity"],
   },
   {
-    num: "09",
+    num: "10",
     slug: "besafe",
     title: "be safe",
     category: "Web Design",
@@ -155,7 +169,7 @@ export const allProjects = [
     results: ["38%", "Retail lift", "7", "Markets launched"],
   },
   {
-    num: "10",
+    num: "11",
     slug: "santam",
     title: "Santam",
     category: "Brand Identity",
@@ -165,7 +179,7 @@ export const allProjects = [
     results: ["38%", "Retail lift", "7", "Markets launched"],
   },
   {
-    num: "11",
+    num: "12",
     slug: "powers",
     title: "Powers",
     category: "Product Design",
@@ -175,7 +189,7 @@ export const allProjects = [
     results: ["500x", "Github stars gained", "95%", "Developer approval"],
   },
   {
-    num: "12",
+    num: "13",
     slug: "susu",
     title: "medical location",
     category: "Web Design",
